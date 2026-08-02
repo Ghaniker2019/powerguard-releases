@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghaniker2019.github.io/powerguard-releases/sitemap.xml

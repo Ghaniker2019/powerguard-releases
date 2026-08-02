@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — PowerGuard</title>
+    <meta name="description" content="PowerGuard privacy policy, GDPR (France) + CCPA (California) compliance.">
+    <link rel="canonical" href="https://ghaniker2019.github.io/powerguard-releases/privacy/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../legal.css">
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="../" class="nav-brand">
+            <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="url(#ng)"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ng" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#007AFF"/><stop offset="1" stop-color="#5856D6"/></linearGradient></defs></svg>
+            PowerGuard
+        </a>
+        <div class="lang-switch" role="group">
+            <button type="button" data-lang="fr">FR</button>
+            <button type="button" data-lang="en">EN</button>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+
+<!-- ================= FR ================= -->
+<article data-lang-content="fr">
+    <h1>Politique de confidentialité</h1>
+    <div class="meta">Dernière mise à jour : 16 avril 2026</div>
+
+    <p>PowerGuard est une application macOS de gestion de batterie et d'utilisation Claude. Cette politique explique quelles données sont collectées, pourquoi, combien de temps elles sont conservées, et comment exercer vos droits.</p>
+
+    <h2>1. Responsable du traitement</h2>
+    <p>PowerGuard (application indépendante). Contact : <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a>.</p>
+
+    <h2>2. Données collectées</h2>
+
+    <h3>2.1 Données batterie (local)</h3>
+    <p>L'app lit l'état de votre batterie via IOKit (charge, cycles, température, santé). Ces données <strong>ne quittent jamais votre Mac</strong>.</p>
+
+    <h3>2.2 Synchronisation Claude (local)</h3>
+    <p>Si vous connectez votre compte Claude, l'app utilise un WKWebView persistant pour se connecter à claude.ai avec vos identifiants. Les cookies Claude sont stockés localement dans votre profil WebKit. Les données d'utilisation (%, limites, plan) sont extraites et affichées dans l'app. <strong>Aucune donnée n'est envoyée à nos serveurs.</strong></p>
+
+    <h3>2.3 Dictée vocale (local)</h3>
+    <p>L'audio enregistré via le microphone est transcrit localement par WhisperKit (CoreML). <strong>L'audio n'est jamais envoyé au cloud.</strong> Le texte est placé dans le presse-papiers.</p>
+
+    <h3>2.4 Licence (LemonSqueezy)</h3>
+    <p>Lors de l'activation d'une licence Pro, votre email et un identifiant machine (UUID hardware tronqué) sont envoyés à LemonSqueezy pour valider la clé. LemonSqueezy agit comme sous-traitant au sens du RGPD (Art. 28). Voir leur politique : <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a>.</p>
+
+    <h3>2.5 Crash logs (local)</h3>
+    <p>En cas de crash, un rapport est écrit dans <code>~/Library/Application Support/PowerGuard/CrashLogs/</code>. <strong>Aucune transmission automatique.</strong> Vous pouvez exporter manuellement via Préférences > Avancé.</p>
+
+    <h2>3. Base légale (RGPD)</h2>
+    <ul>
+        <li><strong>Contrat :</strong> validation licence (Art. 6.1.b)</li>
+        <li><strong>Intérêt légitime :</strong> fonctionnement de l'app (batterie, voix)</li>
+        <li><strong>Consentement :</strong> connexion Claude, microphone (permissions macOS explicites)</li>
+    </ul>
+
+    <h2>4. Durées de conservation</h2>
+    <ul>
+        <li>Données batterie : en mémoire uniquement, effacées à la fermeture</li>
+        <li>Cookies Claude : jusqu'à déconnexion manuelle (Préférences > Claude > Déconnecter)</li>
+        <li>Licence : 24h de cache + 7 jours de grâce hors-ligne</li>
+        <li>Crash logs : jusqu'à purge manuelle</li>
+        <li>Préférences : jusqu'à reset manuel ou désinstallation</li>
+    </ul>
+
+    <h2>5. Vos droits (RGPD)</h2>
+    <p>Vous avez le droit d'accéder, rectifier, supprimer, porter vos données, et vous opposer à leur traitement. Pour exercer ces droits, écrivez à <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a>. Nous répondons sous 30 jours.</p>
+    <p>Vous pouvez aussi déposer une plainte auprès de la <a href="https://www.cnil.fr/" target="_blank" rel="noopener">CNIL</a>.</p>
+
+    <h2>6. Cookies</h2>
+    <p>Le site <code>powerguard.app</code> ne pose aucun cookie traceur. L'application macOS stocke des cookies Claude.ai uniquement si vous vous connectez à Claude depuis l'app (stockage local WebKit, non partagé).</p>
+
+    <h2>7. Transferts internationaux</h2>
+    <p>LemonSqueezy (sous-traitant paiement) est établi aux États-Unis. Le transfert est couvert par les clauses contractuelles types (SCC) de la Commission européenne.</p>
+
+    <div class="callout ccpa">
+        <h3 style="margin-top:0">🇺🇸 California Residents (CCPA)</h3>
+        <p style="margin-bottom:0">PowerGuard <strong>does not sell</strong> your personal information. California residents have the right to know what data is collected (see sections above), request deletion, and opt-out of any future sale. Contact <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a> for any CCPA request.</p>
+    </div>
+
+    <h2>8. Modifications</h2>
+    <p>Nous pouvons mettre à jour cette politique. La date en haut reflète la dernière modification. Les changements substantiels seront annoncés dans l'app.</p>
+</article>
+
+<!-- ================= EN ================= -->
+<article data-lang-content="en" style="display:none;">
+    <h1>Privacy Policy</h1>
+    <div class="meta">Last updated: April 16, 2026</div>
+
+    <p>PowerGuard is a macOS battery management and Claude usage app. This policy explains what data is collected, why, how long it's kept, and how to exercise your rights.</p>
+
+    <h2>1. Data Controller</h2>
+    <p>PowerGuard (independent app). Contact: <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a>.</p>
+
+    <h2>2. Data Collected</h2>
+
+    <h3>2.1 Battery data (local)</h3>
+    <p>The app reads your battery state via IOKit (charge, cycles, temperature, health). This data <strong>never leaves your Mac</strong>.</p>
+
+    <h3>2.2 Claude sync (local)</h3>
+    <p>If you connect your Claude account, the app uses a persistent WKWebView to sign in to claude.ai with your credentials. Claude cookies are stored locally in your WebKit profile. Usage data (%, limits, plan) is extracted and displayed in the app. <strong>No data is sent to our servers.</strong></p>
+
+    <h3>2.3 Voice dictation (local)</h3>
+    <p>Microphone audio is transcribed locally by WhisperKit (CoreML). <strong>Audio never leaves your Mac.</strong> The text is placed in the clipboard.</p>
+
+    <h3>2.4 License (LemonSqueezy)</h3>
+    <p>When activating a Pro license, your email and a truncated machine UUID are sent to LemonSqueezy to validate the key. LemonSqueezy acts as a data processor (GDPR Art. 28). See their policy: <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a>.</p>
+
+    <h3>2.5 Crash logs (local)</h3>
+    <p>On crash, a report is written to <code>~/Library/Application Support/PowerGuard/CrashLogs/</code>. <strong>No automatic transmission.</strong> You can export manually via Preferences > Advanced.</p>
+
+    <h2>3. Legal Basis (GDPR)</h2>
+    <ul>
+        <li><strong>Contract:</strong> license validation (Art. 6.1.b)</li>
+        <li><strong>Legitimate interest:</strong> app functionality (battery, voice)</li>
+        <li><strong>Consent:</strong> Claude login, microphone (explicit macOS permissions)</li>
+    </ul>
+
+    <h2>4. Retention</h2>
+    <ul>
+        <li>Battery data: in-memory only, cleared on app close</li>
+        <li>Claude cookies: until manual disconnect (Preferences > Claude > Disconnect)</li>
+        <li>License: 24h cache + 7-day offline grace</li>
+        <li>Crash logs: until manually purged</li>
+        <li>Preferences: until manual reset or uninstall</li>
+    </ul>
+
+    <h2>5. Your Rights (GDPR)</h2>
+    <p>You have the right to access, correct, delete, port your data, and object to its processing. To exercise these rights, email <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a>. We respond within 30 days.</p>
+    <p>You can also file a complaint with your local data protection authority.</p>
+
+    <h2>6. Cookies</h2>
+    <p>The <code>powerguard.app</code> website sets no tracking cookies. The macOS app only stores Claude.ai cookies if you connect to Claude (local WebKit storage, not shared).</p>
+
+    <h2>7. International Transfers</h2>
+    <p>LemonSqueezy (payment processor) is based in the United States. Transfers are covered by Standard Contractual Clauses (SCCs).</p>
+
+    <div class="callout ccpa">
+        <h3 style="margin-top:0">🇺🇸 California Residents (CCPA)</h3>
+        <p style="margin-bottom:0">PowerGuard <strong>does not sell</strong> your personal information. California residents have the right to know what data is collected (see sections above), request deletion, and opt-out of any future sale. Contact <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a> for any CCPA request.</p>
+    </div>
+
+    <h2>8. Changes</h2>
+    <p>We may update this policy. The date at the top reflects the latest change. Material changes will be announced in the app.</p>
+</article>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-left">© 2026 PowerGuard</div>
+        <div class="footer-links">
+            <a href="../">Home</a>
+            <a href="../terms/">Terms</a>
+            <a href="mailto:ghanikerkoub@gmail.com">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+function detectLang() {
+    const url = new URLSearchParams(location.search).get('lang');
+    if (url === 'fr' || url === 'en') return url;
+    const saved = localStorage.getItem('pg-lang');
+    if (saved === 'fr' || saved === 'en') return saved;
+    return (navigator.language || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
+}
+function applyLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang-content]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang-content') === lang ? '' : 'none';
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+    });
+    const url = new URL(location);
+    if (lang === 'en') url.searchParams.set('lang', 'en'); else url.searchParams.delete('lang');
+    history.replaceState({}, '', url);
+    localStorage.setItem('pg-lang', lang);
+    document.title = lang === 'en' ? 'Privacy Policy — PowerGuard' : 'Politique de confidentialité — PowerGuard';
+}
+applyLang(detectLang());
+document.querySelectorAll('.lang-switch button').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+</script>
+</body>
+</html>
