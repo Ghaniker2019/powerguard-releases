@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ghaniker2019.github.io/powerguard-releases/">
     <meta property="og:title" content="PowerGuard — Protect your MacBook. Track Claude usage.">
-    <meta property="og:description" content="macOS menu bar app for AI developers: battery control, Claude usage tracking, local voice-to-text. Free during beta.">
+    <meta property="og:description" content="macOS menu bar app for AI developers: battery control, Claude usage tracking, local voice-to-text. Free tier + Pro.">
     <meta property="og:image" content="https://ghaniker2019.github.io/powerguard-releases/og-image.png">
 
     <!-- Twitter Card -->
@@ -35,11 +35,10 @@
         "operatingSystem": "macOS 14.0+",
         "url": "https://ghaniker2019.github.io/powerguard-releases/",
         "downloadUrl": "https://github.com/Ghaniker2019/powerguard-releases/releases/latest/download/PowerGuard.dmg",
-        "offers": {
-            "@type": "Offer",
-            "price": "19.99",
-            "priceCurrency": "EUR"
-        }
+        "offers": [
+            { "@type": "Offer", "price": "19.99", "priceCurrency": "EUR" },
+            { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
+        ]
     }
     </script>
 
@@ -256,7 +255,7 @@
 
 <nav>
     <div class="container">
-        <a href="#" class="nav-brand">
+        <a href="." class="nav-brand">
             <svg viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="7" fill="url(#ng)"/><path d="M8 14.5L12 18.5L20 10.5" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ng" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#007AFF"/><stop offset="1" stop-color="#5856D6"/></linearGradient></defs></svg>
             PowerGuard
         </a>
@@ -287,10 +286,6 @@
                     <span data-i18n="hero_cta_primary">Télécharger la beta</span>
                 </a>
                 <a href="#features" class="btn-secondary" data-i18n="hero_cta_secondary">Voir les features ↓</a>
-            </div>
-            <div class="counter-badge">
-                <span class="num">42</span>
-                <span data-i18n="counter">devs beta testeurs — 3 pays</span>
             </div>
         </div>
         <div class="hero-visual">
@@ -331,7 +326,8 @@
 </section>
 
 <!-- ============ SCREENSHOTS ============ -->
-<section id="screenshots" style="border-top:1px solid var(--border);">
+<!-- Hidden until real screenshots exist (placeholders were empty gray boxes). -->
+<section id="screenshots" hidden style="border-top:1px solid var(--border);">
     <div class="container">
         <div class="section-label reveal" data-i18n="shots_label">Aperçu</div>
         <h2 class="section-title reveal" data-i18n="shots_title">Tout dans votre menu bar</h2>
@@ -403,7 +399,7 @@
                 <div class="price-amount"><span data-price-free="0€">0€</span></div>
                 <div class="price-desc" data-i18n="free_desc">Pour toujours</div>
                 <ul class="price-features">
-                    <li data-i18n="fr1">Seuil de charge (fixe 80%)</li>
+                    <li data-i18n="fr1">Seuil de charge unique (20-100%)</li>
                     <li data-i18n="fr2">Santé batterie</li>
                     <li data-i18n="fr3">Détection sessions IA</li>
                     <li data-i18n="fr4">Widget menu bar</li>
@@ -413,7 +409,7 @@
             <div class="price-card featured reveal" data-badge="POPULAIRE">
                 <div class="price-tier" data-i18n="tier_pro">Pro</div>
                 <div class="price-amount"><span data-price-pro="19.99€">19.99€</span> <span data-i18n="once">une fois</span></div>
-                <div class="price-desc" data-i18n="pro_desc">Licence perpétuelle</div>
+                <div class="price-desc" data-i18n="pro_desc">Licence perpétuelle · Essai gratuit 7 jours</div>
                 <ul class="price-features">
                     <li data-i18n="pr1">Tout le tier gratuit</li>
                     <li class="pro" data-i18n="pr2">Suivi limites Claude temps réel</li>
@@ -428,50 +424,9 @@
     </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
-<section id="testimonials" style="border-top:1px solid var(--border);">
-    <div class="container">
-        <div class="section-label reveal" data-i18n="tm_label">Beta testeurs</div>
-        <h2 class="section-title reveal" data-i18n="tm_title">Ils utilisent PowerGuard</h2>
-        <p class="section-sub reveal" data-i18n="tm_sub">Retours des premiers développeurs qui codent avec Claude au quotidien.</p>
-        <div class="testimonials">
-            <div class="testimonial reveal">
-                <div class="stars">★★★★★</div>
-                <p data-i18n="tm1_quote">« Enfin je sais où j'en suis avec Claude. Le tracker en menu bar m'a sauvé plusieurs fois d'un rate limit pendant un sprint. »</p>
-                <div class="author">
-                    <div class="avatar">AL</div>
-                    <div>
-                        <div class="name">Alex L.</div>
-                        <div class="role" data-i18n="tm1_role">Senior iOS Dev</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial reveal">
-                <div class="stars">★★★★★</div>
-                <p data-i18n="tm2_quote">« La dictée locale Whisper est un game changer. Je dicte mes prompts Cursor avec Ctrl+Option+Space, zéro cloud. »</p>
-                <div class="author">
-                    <div class="avatar">MC</div>
-                    <div>
-                        <div class="name">Marie C.</div>
-                        <div class="role" data-i18n="tm2_role">ML Engineer</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial reveal">
-                <div class="stars">★★★★★</div>
-                <p data-i18n="tm3_quote">« J'utilisais AlDente pour la batterie et Claude.ai en onglet permanent. PowerGuard remplace les deux. »</p>
-                <div class="author">
-                    <div class="avatar">TK</div>
-                    <div>
-                        <div class="name">Thomas K.</div>
-                        <div class="role" data-i18n="tm3_role">Indie Mac Dev</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p class="testimonials-note" data-i18n="tm_note">BETA COHORT · 42 DEVELOPERS · 3 COUNTRIES</p>
-    </div>
-</section>
+<!-- Testimonials section removed pre-launch: no real users yet (v0.1.0).
+     Re-add only with genuine, attributable feedback. -->
+
 
 <!-- ============ FAQ ============ -->
 <section id="faq" style="border-top:1px solid var(--border);">
@@ -485,11 +440,11 @@
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q2">Est-ce dangereux pour ma batterie ?</summary>
-                <div class="answer" data-i18n="a2">Non. PowerGuard utilise le SMC (System Management Controller) de la même manière qu'Apple en interne. Un mécanisme fail-safe réactive automatiquement la charge en cas d'erreur. La batterie ne peut jamais être endommagée — au contraire, maintenir entre 60-80% prolonge sa durée de vie de 30-50%.</div>
+                <div class="answer" data-i18n="a2">Non. PowerGuard pilote le SMC (System Management Controller), le contrôleur qu'utilise macOS lui-même pour gérer la charge. Un mécanisme fail-safe réactive la charge en cas d'erreur. Limiter la charge autour de 60-80% réduit l'usure d'une batterie maintenue en permanence à 100% — un principe reconnu de longévité des batteries lithium-ion. Comme toute intervention logicielle, le résultat ne peut être garanti à 100% (voir nos Conditions).</div>
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q3">Que se passe-t-il si Claude.ai change son interface ?</summary>
-                <div class="answer" data-i18n="a3">PowerGuard utilise une stratégie à deux niveaux : interception d'API + scraping DOM en fallback. Si Anthropic modifie quelque chose, nous publions une mise à jour sous 48h via Sparkle. Dans le pire cas, le reste de l'app continue de fonctionner normalement (batterie, voix, focus).</div>
+                <div class="answer" data-i18n="a3">PowerGuard utilise une stratégie à deux niveaux : interception d'API + scraping DOM en fallback. Si Anthropic modifie son interface, nous publions un correctif dès que possible via la mise à jour automatique Sparkle. Entre-temps, le reste de l'app continue de fonctionner normalement (batterie, voix, focus).</div>
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q4">Mes données vont-elles quelque part ?</summary>
@@ -529,7 +484,7 @@
         <h2 class="section-title reveal" data-i18n="download_title">Rejoignez la beta.</h2>
         <p class="section-sub reveal" data-i18n="download_sub">Téléchargez le DMG, glissez PowerGuard dans Applications. Les mises à jour arrivent ensuite automatiquement.</p>
         <p class="reveal" style="margin-bottom:16px;">
-            <a class="btn-primary" href="https://github.com/Ghaniker2019/powerguard-releases/releases/latest/download/PowerGuard.dmg" data-i18n="download_btn">Télécharger PowerGuard (.dmg)</a>
+            <a class="btn-primary" href="https://github.com/Ghaniker2019/powerguard-releases/releases/latest/download/PowerGuard.dmg" rel="noopener" download data-i18n="download_btn">Télécharger PowerGuard (.dmg)</a>
         </p>
         <!-- Email capture disabled until a real Formspree form ID exists.
              To re-enable: create a form at https://formspree.io (free, 50
@@ -541,7 +496,7 @@
         </form>
         <div class="email-message" id="form-message" role="status" aria-live="polite"></div>
         -->
-        <p class="cta-note reveal" data-i18n="download_note">macOS 14+ · Apple Silicon + Intel · Notarisée par Apple · 100% gratuit pendant la beta</p>
+        <p class="cta-note reveal" data-i18n="download_note">macOS 14+ · Apple Silicon + Intel · Notarisée par Apple</p>
     </div>
 </section>
 
@@ -570,7 +525,6 @@ const TRANSLATIONS = {
         hero_title: "L'outil Mac pour<br><span class=\"gradient\">les devs Claude.</span>",
         hero_sub: "Suivi limites Claude, dictée vocale locale, contrôle batterie, Focus IA auto. Cinq utilitaires en un, dans votre menu bar.",
         hero_cta_primary: "Télécharger la beta", hero_cta_secondary: "Voir les features ↓",
-        counter: "devs beta testeurs — 3 pays",
         ring_label: "SEUIL ACTIF",
         stat_health: "Health", stat_temp: "Temp", stat_cycles: "Cycles",
         features_label: "Fonctionnalités",
@@ -589,14 +543,14 @@ const TRANSLATIONS = {
         pricing_title: "Gratuit pour commencer.<br>Pro pour tout débloquer.",
         pricing_sub: "Achat unique. Pas d'abonnement. 1 an de mises à jour inclus.",
         tier_free: "Gratuit", free_desc: "Pour toujours",
-        fr1: "Seuil de charge (fixe 80%)", fr2: "Santé batterie", fr3: "Détection sessions IA", fr4: "Widget menu bar", fr5: "Notifications critiques",
-        tier_pro: "Pro", once: "une fois", pro_desc: "Licence perpétuelle", badge_popular: "POPULAIRE",
+        fr1: "Seuil de charge unique (20-100%)", fr2: "Santé batterie", fr3: "Détection sessions IA", fr4: "Widget menu bar", fr5: "Notifications critiques",
+        tier_pro: "Pro", once: "une fois", pro_desc: "Licence perpétuelle · Essai gratuit 7 jours", badge_popular: "POPULAIRE",
         pr1: "Tout le tier gratuit", pr2: "Suivi limites Claude temps réel", pr3: "Voice-to-Text (Whisper local)", pr4: "Focus IA automatique", pr5: "Graphiques santé batterie", pr6: "Mode plage (hystérésis)", pr7: "Alertes température",
         download_label: "Télécharger", download_title: "Rejoignez la beta.",
         download_sub: "Téléchargez le DMG, glissez PowerGuard dans Applications. Les mises à jour arrivent ensuite automatiquement.",
         download_btn: "Télécharger PowerGuard (.dmg)",
         form_submit: "Accéder à la beta",
-        download_note: "macOS 14+ · Apple Silicon + Intel · Notarisée par Apple · 100% gratuit pendant la beta",
+        download_note: "macOS 14+ · Apple Silicon + Intel · Notarisée par Apple",
         footer_copy: "© 2026 PowerGuard. Tous droits réservés.",
         footer_privacy: "Confidentialité", footer_terms: "Conditions", footer_contact: "Contact",
         form_success: "Merci ! Vérifiez votre email pour le lien.",
@@ -617,25 +571,16 @@ const TRANSLATIONS = {
         cmp_widget: "Widget macOS", cmp_intel: "Support Intel Macs",
         cmp_price: "Prix", cmp_free: "Gratuit", cmp_subscription: "Sans abonnement",
 
-        // Testimonials
-        tm_label: "Beta testeurs", tm_title: "Ils utilisent PowerGuard",
-        tm_sub: "Retours des premiers développeurs qui codent avec Claude au quotidien.",
-        tm1_quote: "« Enfin je sais où j'en suis avec Claude. Le tracker en menu bar m'a sauvé plusieurs fois d'un rate limit pendant un sprint. »",
-        tm1_role: "Senior iOS Dev",
-        tm2_quote: "« La dictée locale Whisper est un game changer. Je dicte mes prompts Cursor avec Ctrl+Option+Space, zéro cloud. »",
-        tm2_role: "ML Engineer",
-        tm3_quote: "« J'utilisais AlDente pour la batterie et Claude.ai en onglet permanent. PowerGuard remplace les deux. »",
-        tm3_role: "Indie Mac Dev",
-        tm_note: "COHORTE BETA · 42 DÉVELOPPEURS · 3 PAYS",
+        // Testimonials removed pre-launch (no real users yet).
 
         // FAQ
         faq_label: "FAQ", faq_title: "Questions fréquentes",
         q1: "macOS 26.4 a déjà le charge limit natif. Pourquoi PowerGuard ?",
         a1: "Le charge limit natif d'Apple est limité à 80-100%. PowerGuard va de 20 à 100% avec hystérésis + pause thermique. Surtout, PowerGuard ajoute 4 features qu'Apple ne fait pas : suivi Claude, voice-to-text local, Focus IA auto, et graphiques santé batterie. C'est une utility suite complète pour les devs IA, pas juste un charge limiter.",
         q2: "Est-ce dangereux pour ma batterie ?",
-        a2: "Non. PowerGuard utilise le SMC (System Management Controller) de la même manière qu'Apple en interne. Un mécanisme fail-safe réactive automatiquement la charge en cas d'erreur. La batterie ne peut jamais être endommagée — au contraire, maintenir entre 60-80% prolonge sa durée de vie de 30-50%.",
+        a2: "Non. PowerGuard pilote le SMC (System Management Controller), le contrôleur qu'utilise macOS lui-même pour gérer la charge. Un mécanisme fail-safe réactive la charge en cas d'erreur. Limiter la charge autour de 60-80% réduit l'usure d'une batterie maintenue en permanence à 100% — un principe reconnu de longévité des batteries lithium-ion. Comme toute intervention logicielle, le résultat ne peut être garanti à 100% (voir nos Conditions).",
         q3: "Que se passe-t-il si Claude.ai change son interface ?",
-        a3: "PowerGuard utilise une stratégie à deux niveaux : interception d'API + scraping DOM en fallback. Si Anthropic modifie quelque chose, nous publions une mise à jour sous 48h via Sparkle. Dans le pire cas, le reste de l'app continue de fonctionner normalement (batterie, voix, focus).",
+        a3: "PowerGuard utilise une stratégie à deux niveaux : interception d'API + scraping DOM en fallback. Si Anthropic modifie son interface, nous publions un correctif dès que possible via la mise à jour automatique Sparkle. Entre-temps, le reste de l'app continue de fonctionner normalement (batterie, voix, focus).",
         q4: "Mes données vont-elles quelque part ?",
         a4: "Non. Tout est local : batterie via IOKit, voice via WhisperKit (CoreML), cookies Claude dans votre profil WebKit local. La seule connexion externe est LemonSqueezy pour valider votre licence (email + UUID machine). Aucune analytics, aucun crash report automatique. Voir notre <a href=\"./privacy/\">politique de confidentialité</a>.",
         q5: "Fonctionne sur Intel Mac ?",
@@ -659,7 +604,6 @@ const TRANSLATIONS = {
         hero_title: "The Mac utility for<br><span class=\"gradient\">Claude developers.</span>",
         hero_sub: "Claude usage tracking, local voice dictation, battery control, auto Focus mode. Five utilities in one, in your menu bar.",
         hero_cta_primary: "Download the beta", hero_cta_secondary: "See features ↓",
-        counter: "beta testers — 3 countries",
         ring_label: "ACTIVE LIMIT",
         stat_health: "Health", stat_temp: "Temp", stat_cycles: "Cycles",
         features_label: "Features",
@@ -678,14 +622,14 @@ const TRANSLATIONS = {
         pricing_title: "Free to start.<br>Pro to unlock everything.",
         pricing_sub: "One-time purchase. No subscription. 1 year of updates included.",
         tier_free: "Free", free_desc: "Forever",
-        fr1: "Charge limit (fixed 80%)", fr2: "Battery health", fr3: "AI session detection", fr4: "Menu bar widget", fr5: "Critical notifications",
-        tier_pro: "Pro", once: "one time", pro_desc: "Perpetual license", badge_popular: "POPULAR",
+        fr1: "Single charge limit (20-100%)", fr2: "Battery health", fr3: "AI session detection", fr4: "Menu bar widget", fr5: "Critical notifications",
+        tier_pro: "Pro", once: "one time", pro_desc: "Perpetual license · 7-day free trial", badge_popular: "POPULAR",
         pr1: "Everything in Free", pr2: "Real-time Claude limits", pr3: "Voice-to-Text (local Whisper)", pr4: "Auto Focus AI", pr5: "Battery health charts", pr6: "Range mode (hysteresis)", pr7: "Temperature alerts",
         download_label: "Download", download_title: "Join the beta.",
         download_sub: "Download the DMG, drag PowerGuard into Applications. Updates then arrive automatically.",
         download_btn: "Download PowerGuard (.dmg)",
         form_submit: "Get beta access",
-        download_note: "macOS 14+ · Apple Silicon + Intel · Notarized by Apple · 100% free during beta",
+        download_note: "macOS 14+ · Apple Silicon + Intel · Notarized by Apple",
         footer_copy: "© 2026 PowerGuard. All rights reserved.",
         footer_privacy: "Privacy", footer_terms: "Terms", footer_contact: "Contact",
         form_success: "Thanks! Check your email for the link.",
@@ -706,25 +650,16 @@ const TRANSLATIONS = {
         cmp_widget: "macOS Widget", cmp_intel: "Intel Mac support",
         cmp_price: "Price", cmp_free: "Free", cmp_subscription: "No subscription",
 
-        // Testimonials
-        tm_label: "Beta testers", tm_title: "They use PowerGuard",
-        tm_sub: "Feedback from early developers coding with Claude daily.",
-        tm1_quote: "\"Finally I know where I stand with Claude. The menu bar tracker saved me from rate limits multiple times during a sprint.\"",
-        tm1_role: "Senior iOS Dev",
-        tm2_quote: "\"Local Whisper dictation is a game changer. I dictate my Cursor prompts with Ctrl+Option+Space, zero cloud.\"",
-        tm2_role: "ML Engineer",
-        tm3_quote: "\"I was using AlDente for battery and Claude.ai as a permanent tab. PowerGuard replaces both.\"",
-        tm3_role: "Indie Mac Dev",
-        tm_note: "BETA COHORT · 42 DEVELOPERS · 3 COUNTRIES",
+        // Testimonials removed pre-launch (no real users yet).
 
         // FAQ
         faq_label: "FAQ", faq_title: "Frequently asked",
         q1: "macOS 26.4 has native charge limit. Why PowerGuard?",
         a1: "Apple's native charge limit is 80-100% only. PowerGuard goes 20-100% with hysteresis + thermal pause. More importantly, PowerGuard adds 4 features Apple doesn't: Claude tracking, local voice-to-text, auto Focus AI, and battery health charts. It's a complete utility suite for AI devs, not just a charge limiter.",
         q2: "Is it dangerous for my battery?",
-        a2: "No. PowerGuard uses the SMC (System Management Controller) the same way Apple does internally. A fail-safe mechanism re-enables charging on error. Your battery can never be damaged — on the contrary, keeping it between 60-80% extends its life by 30-50%.",
+        a2: "No. PowerGuard drives the SMC (System Management Controller), the same controller macOS itself uses to manage charging. A fail-safe mechanism re-enables charging on error. Keeping the charge around 60-80% reduces the wear of a battery held at 100% all the time — a well-established principle of lithium-ion longevity. As with any software intervention, the outcome cannot be guaranteed 100% (see our Terms).",
         q3: "What if Claude.ai changes its interface?",
-        a3: "PowerGuard uses a two-layer strategy: API interception + DOM scraping fallback. If Anthropic changes something, we ship an update within 48h via Sparkle. In the worst case, the rest of the app keeps working normally (battery, voice, focus).",
+        a3: "PowerGuard uses a two-layer strategy: API interception + DOM scraping fallback. If Anthropic changes its interface, we ship a fix as soon as possible via Sparkle auto-update. In the meantime, the rest of the app keeps working normally (battery, voice, focus).",
         q4: "Where does my data go?",
         a4: "Nowhere. Everything is local: battery via IOKit, voice via WhisperKit (CoreML), Claude cookies in your local WebKit profile. The only external connection is LemonSqueezy to validate your license (email + machine UUID). No analytics, no auto crash reports. See our <a href=\"./privacy/\">privacy policy</a>.",
         q5: "Does it work on Intel Macs?",
