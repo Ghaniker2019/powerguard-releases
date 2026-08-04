@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="title">PowerGuard — Protégez votre MacBook. Trackez vos limites Claude.</title>
-    <meta name="description" data-i18n-attr="content" data-i18n="description" content="PowerGuard gère la charge de votre MacBook, suit vos limites Claude en temps réel, et transcrit votre voix localement. Gratuit pour les développeurs IA.">
+    <title data-i18n="title">PowerGuard — Limiteur de charge Mac &amp; suivi d'usage Claude</title>
+    <meta name="description" data-i18n-attr="content" data-i18n="description" content="App menu bar macOS : limitez la charge de votre MacBook (20–100 %), suivez vos limites Claude en temps réel, dictée vocale locale. Alternative à AlDente, notarisée Apple.">
+    <meta name="keywords" content="limiteur de charge Mac, battery charge limit macOS, AlDente alternative, suivi usage Claude, Claude usage tracker, menu bar app, dictée vocale locale, Whisper Mac">
     <meta name="theme-color" content="#0a0a0f">
     <!-- Site served at github.io until the powerguard.app domain is live -->
     <link rel="canonical" href="https://ghaniker2019.github.io/powerguard-releases/">
@@ -15,9 +16,12 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ghaniker2019.github.io/powerguard-releases/">
-    <meta property="og:title" content="PowerGuard — Protect your MacBook. Track Claude usage.">
-    <meta property="og:description" content="macOS menu bar app for AI developers: battery control, Claude usage tracking, local voice-to-text. Free tier + Pro.">
+    <meta property="og:title" content="PowerGuard — Mac charge limiter & Claude usage tracker">
+    <meta property="og:description" content="macOS menu bar app for AI developers: battery charge limit, Claude usage tracking, local voice-to-text. A notarized AlDente alternative.">
     <meta property="og:image" content="https://ghaniker2019.github.io/powerguard-releases/og-image.png">
+    <meta property="og:image:alt" content="PowerGuard — macOS menu bar app for battery charge limit and Claude usage tracking">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -25,27 +29,63 @@
     <meta name="twitter:description" content="Battery control + Claude usage tracking + Voice-to-text. All in your menu bar.">
     <meta name="twitter:image" content="https://ghaniker2019.github.io/powerguard-releases/og-image.png">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD: SoftwareApplication -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "PowerGuard",
+        "description": "App menu bar macOS qui limite la charge de votre MacBook (20–100 %) via le SMC, suit vos limites d'usage Claude en temps réel, transcrit la voix localement avec Whisper, et affiche la santé batterie.",
         "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "macOS 14.0+",
+        "applicationSubCategory": "Utility",
+        "operatingSystem": "macOS",
+        "softwareVersion": "0.1.1",
+        "softwareRequirements": "macOS 14 (Sonoma) ou plus ; Apple Silicon ou Intel",
+        "datePublished": "2026-08-03",
         "url": "https://ghaniker2019.github.io/powerguard-releases/",
         "downloadUrl": "https://github.com/Ghaniker2019/powerguard-releases/releases/latest/download/PowerGuard.dmg",
+        "image": "https://ghaniker2019.github.io/powerguard-releases/og-image.png",
+        "author": { "@type": "Organization", "name": "PowerGuard" },
+        "featureList": [
+            "Limite de charge 20–100 % via SMC",
+            "Suivi des limites d'usage Claude (session, hebdo, par modèle)",
+            "Dictée vocale locale (Whisper)",
+            "Mode Focus auto pour les sessions IA",
+            "Graphiques de santé batterie"
+        ],
         "offers": [
-            { "@type": "Offer", "price": "19.99", "priceCurrency": "EUR" },
-            { "@type": "Offer", "price": "19.99", "priceCurrency": "USD" }
+            { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "name": "Gratuit" },
+            { "@type": "Offer", "price": "19.99", "priceCurrency": "EUR", "name": "Pro" },
+            { "@type": "Offer", "price": "19.99", "priceCurrency": "USD", "name": "Pro" }
+        ]
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage (built from the on-page FAQ — eligible for rich results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "macOS 26.4 a déjà le charge limit natif. Pourquoi PowerGuard ?", "acceptedAnswer": { "@type": "Answer", "text": "Le charge limit natif d'Apple est limité à 80-100%. PowerGuard va de 20 à 100% avec hystérésis + pause thermique. Surtout, PowerGuard ajoute 4 features qu'Apple ne fait pas : suivi Claude, voice-to-text local, Focus IA auto, et graphiques santé batterie. C'est une utility suite complète pour les devs IA, pas juste un charge limiter." } },
+            { "@type": "Question", "name": "Est-ce dangereux pour ma batterie ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. PowerGuard pilote le SMC, le contrôleur qu'utilise macOS lui-même pour gérer la charge. Un mécanisme fail-safe réactive la charge en cas d'erreur. Limiter la charge autour de 60-80% réduit l'usure d'une batterie maintenue en permanence à 100% — un principe reconnu de longévité des batteries lithium-ion. Comme toute intervention logicielle, le résultat ne peut être garanti à 100% (voir nos Conditions)." } },
+            { "@type": "Question", "name": "Que se passe-t-il si Claude.ai change son interface ?", "acceptedAnswer": { "@type": "Answer", "text": "PowerGuard utilise une stratégie à deux niveaux : interception d'API + scraping DOM en fallback. Si Anthropic modifie son interface, nous publions un correctif dès que possible via la mise à jour automatique Sparkle. Entre-temps, le reste de l'app continue de fonctionner normalement (batterie, voix, focus)." } },
+            { "@type": "Question", "name": "Mes données vont-elles quelque part ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Tout est local : batterie via IOKit, voice via WhisperKit (CoreML), cookies Claude dans votre profil WebKit local. La seule connexion externe est LemonSqueezy pour valider votre licence. Aucune analytics, aucun crash report automatique." } },
+            { "@type": "Question", "name": "Fonctionne sur Intel Mac ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. PowerGuard est un binaire universal (arm64 + x86_64). Fonctionne sur MacBook Intel depuis 2015 et tous les Apple Silicon (M1/M2/M3/M4). Requiert macOS 14 (Sonoma) ou plus." } },
+            { "@type": "Question", "name": "Puis-je être remboursé ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, garantie 30 jours satisfait ou remboursé. Écrivez à ghanikerkoub@gmail.com avec votre email de licence — remboursement sous 5 jours ouvrés via LemonSqueezy, aucune question." } },
+            { "@type": "Question", "name": "Le raccourci Ctrl+Option+Space est-il personnalisable ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas encore. Le hotkey est fixé pour garantir qu'il ne conflicte pas avec les raccourcis système. La personnalisation arrive dans une prochaine version." } },
+            { "@type": "Question", "name": "Combien de Macs par licence ?", "acceptedAnswer": { "@type": "Answer", "text": "Jusqu'à 3 Macs personnels que vous possédez. La licence est perpétuelle et inclut 1 an de mises à jour." } },
+            { "@type": "Question", "name": "Pourquoi PowerGuard demande un service privilégié ?", "acceptedAnswer": { "@type": "Answer", "text": "Le contrôle SMC nécessite un accès root (c'est macOS qui l'impose). PowerGuard utilise un helper XPC signé Apple (SMAppService) avec un accès minimal — uniquement aux registres SMC de charge. Aucun accès réseau, aucun accès à vos fichiers." } },
+            { "@type": "Question", "name": "Combien pèse le modèle Whisper ?", "acceptedAnswer": { "@type": "Answer", "text": "Le modèle large-v3 pèse ~1.5 GB (téléchargé une seule fois depuis Hugging Face au premier usage voice). Vous pouvez aussi utiliser le modèle base (~75 MB) — moins précis mais 10× plus rapide." } }
         ]
     }
     </script>
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,900,500,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Monospace uses the system stack (SF Mono / Menlo) — no extra font origin to block render. -->
     <style>
         :root {
             --blue: #007AFF; --purple: #5856D6; --green: #30D158;
@@ -57,9 +97,9 @@
             --border-hover: rgba(255,255,255,0.15);
             --text-1: rgba(255,255,255,0.92);
             --text-2: rgba(255,255,255,0.55);
-            --text-3: rgba(255,255,255,0.3);
+            --text-3: rgba(255,255,255,0.48);
             --font: 'Satoshi', -apple-system, sans-serif;
-            --mono: 'JetBrains Mono', ui-monospace, monospace;
+            --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, monospace;
             --ease: cubic-bezier(0.16, 1, 0.3, 1);
             --max-w: 1080px;
         }
@@ -249,9 +289,25 @@
 
         .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
         .reveal.visible { opacity:1; transform:translateY(0); }
+
+        /* Keyboard focus visibility (a11y) */
+        a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible {
+            outline:2px solid var(--blue); outline-offset:2px; border-radius:4px;
+        }
+        /* Skip-to-content link */
+        .skip-link { position:absolute; left:-9999px; top:0; z-index:1000; background:var(--blue); color:#fff; padding:10px 16px; border-radius:0 0 8px 0; font-size:13px; font-weight:600; }
+        .skip-link:focus { left:0; }
+
+        /* Respect the user's reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+            html { scroll-behavior:auto; }
+            .reveal { opacity:1 !important; transform:none !important; }
+        }
     </style>
 </head>
 <body>
+<a href="#main" class="skip-link" data-i18n="skip_link">Aller au contenu</a>
 
 <nav>
     <div class="container">
@@ -274,7 +330,7 @@
     </div>
 </nav>
 
-<section class="hero">
+<section class="hero" id="main">
     <div class="container">
         <div class="hero-text">
             <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Beta ouverte — macOS 14+</span></div>
@@ -288,7 +344,7 @@
                 <a href="#features" class="btn-secondary" data-i18n="hero_cta_secondary">Voir les features ↓</a>
             </div>
         </div>
-        <div class="hero-visual">
+        <div class="hero-visual" aria-hidden="true">
             <div class="ring-container">
                 <div class="ring-bg"></div>
                 <svg class="ring-svg" viewBox="0 0 260 260">
@@ -316,11 +372,11 @@
         <h2 class="section-title reveal" data-i18n="features_title">5 piliers. Un seul menu bar.</h2>
         <p class="section-sub reveal" data-i18n="features_sub">Chaque feature est conçue pour les développeurs qui poussent leur MacBook avec des outils IA.</p>
         <div class="features-grid">
-            <div class="feature-card reveal"><div class="feature-icon">🔋</div><h3 data-i18n="f1_title">Battery Control</h3><p data-i18n="f1_desc">Seuil de charge 20-100% via SMC. Hystérésis configurable. Pause thermique automatique quand la température monte.</p><span class="tag">SMC · XPC · Root</span></div>
-            <div class="feature-card reveal"><div class="feature-icon">📊</div><h3 data-i18n="f2_title">Claude Usage</h3><p data-i18n="f2_desc">Suivi en temps réel de vos limites : session (5h), hebdomadaire, Sonnet. Sync automatique depuis claude.ai.</p><span class="tag">WebKit · API · Auto-sync</span></div>
-            <div class="feature-card reveal"><div class="feature-icon">🎤</div><h3 data-i18n="f3_title">Voice-to-Text</h3><p data-i18n="f3_desc">Whisper large-v3 local. Dictez avec Ctrl+Option+Space, le texte est collé automatiquement. Zéro cloud.</p><span class="tag">WhisperKit · VAD · Local</span></div>
-            <div class="feature-card reveal"><div class="feature-icon">⚡</div><h3 data-i18n="f4_title">Focus IA</h3><p data-i18n="f4_desc">S'active automatiquement pendant vos sessions Claude/Cursor. Pause Spotlight, Time Machine, veille.</p><span class="tag">IOKit · Auto-detect</span></div>
-            <div class="feature-card reveal"><div class="feature-icon">❤️‍🩹</div><h3 data-i18n="f5_title">Battery Health</h3><p data-i18n="f5_desc">Santé %, cycles, température, historique de capacité. Estimez la durée de vie restante de votre batterie.</p><span class="tag">IOKit · Charts · History</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🔋</div><h3 data-i18n="f1_title">Battery Control</h3><p data-i18n="f1_desc">Seuil de charge 20-100% via SMC. Hystérésis configurable. Pause thermique automatique quand la température monte.</p><span class="tag">SMC · XPC · Root</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">📊</div><h3 data-i18n="f2_title">Claude Usage</h3><p data-i18n="f2_desc">Suivi en temps réel de vos limites : session (5h), hebdomadaire, Sonnet. Sync automatique depuis claude.ai.</p><span class="tag">WebKit · API · Auto-sync</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🎤</div><h3 data-i18n="f3_title">Voice-to-Text</h3><p data-i18n="f3_desc">Whisper large-v3 local. Dictez avec Ctrl+Option+Space, le texte est collé automatiquement. Zéro cloud.</p><span class="tag">WhisperKit · VAD · Local</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">⚡</div><h3 data-i18n="f4_title">Focus IA</h3><p data-i18n="f4_desc">S'active automatiquement pendant vos sessions Claude/Cursor. Pause Spotlight, Time Machine, veille.</p><span class="tag">IOKit · Auto-detect</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">❤️‍🩹</div><h3 data-i18n="f5_title">Battery Health</h3><p data-i18n="f5_desc">Santé %, cycles, température, historique de capacité. Estimez la durée de vie restante de votre batterie.</p><span class="tag">IOKit · Charts · History</span></div>
         </div>
     </div>
 </section>
@@ -406,7 +462,7 @@
                     <li data-i18n="fr5">Notifications critiques</li>
                 </ul>
             </div>
-            <div class="price-card featured reveal" data-badge="POPULAIRE">
+            <div class="price-card featured reveal" data-badge="ESSAI 7 JOURS">
                 <div class="price-tier" data-i18n="tier_pro">Pro</div>
                 <div class="price-amount"><span data-price-pro="19.99€">19.99€</span> <span data-i18n="once">une fois</span></div>
                 <div class="price-desc" data-i18n="pro_desc">Licence perpétuelle · Essai gratuit 7 jours</div>
@@ -518,8 +574,8 @@
 // ============================================================
 const TRANSLATIONS = {
     fr: {
-        title: "PowerGuard — Protégez votre MacBook. Trackez vos limites Claude.",
-        description: "PowerGuard gère la charge de votre MacBook, suit vos limites Claude en temps réel, et transcrit votre voix localement. Gratuit pour les développeurs IA.",
+        title: "PowerGuard — Limiteur de charge Mac & suivi d'usage Claude",
+        description: "App menu bar macOS : limitez la charge de votre MacBook (20–100 %), suivez vos limites Claude en temps réel, dictée vocale locale. Alternative à AlDente, notarisée Apple.",
         nav_features: "Features", nav_how: "Comment ça marche", nav_pricing: "Tarifs", nav_cta: "Télécharger",
         hero_badge: "Beta ouverte — macOS 14+",
         hero_title: "L'outil Mac pour<br><span class=\"gradient\">les devs Claude.</span>",
@@ -544,7 +600,7 @@ const TRANSLATIONS = {
         pricing_sub: "Achat unique. Pas d'abonnement. 1 an de mises à jour inclus.",
         tier_free: "Gratuit", free_desc: "Pour toujours",
         fr1: "Seuil de charge unique (20-100%)", fr2: "Santé batterie", fr3: "Détection sessions IA", fr4: "Widget menu bar", fr5: "Notifications critiques",
-        tier_pro: "Pro", once: "une fois", pro_desc: "Licence perpétuelle · Essai gratuit 7 jours", badge_popular: "POPULAIRE",
+        tier_pro: "Pro", once: "une fois", pro_desc: "Licence perpétuelle · Essai gratuit 7 jours", badge_popular: "ESSAI 7 JOURS", skip_link: "Aller au contenu",
         pr1: "Tout le tier gratuit", pr2: "Suivi limites Claude temps réel", pr3: "Voice-to-Text (Whisper local)", pr4: "Focus IA automatique", pr5: "Graphiques santé batterie", pr6: "Mode plage (hystérésis)", pr7: "Alertes température",
         download_label: "Télécharger", download_title: "Rejoignez la beta.",
         download_sub: "Téléchargez le DMG, glissez PowerGuard dans Applications. Les mises à jour arrivent ensuite automatiquement.",
@@ -597,8 +653,8 @@ const TRANSLATIONS = {
         a10: "Le modèle large-v3 pèse ~1.5 GB (téléchargé une seule fois depuis Hugging Face au premier usage voice). Si vous voulez économiser de l'espace, vous pouvez utiliser le modèle base (~75 MB) — moins précis mais 10× plus rapide.",
     },
     en: {
-        title: "PowerGuard — Protect your MacBook. Track your Claude limits.",
-        description: "PowerGuard manages your MacBook's charging, tracks your Claude usage in real-time, and transcribes your voice locally. Free for AI developers.",
+        title: "PowerGuard — Mac charge limiter & Claude usage tracker",
+        description: "macOS menu bar app: limit your MacBook's charge (20–100%), track your Claude usage in real time, local voice-to-text. A notarized AlDente alternative with a free tier.",
         nav_features: "Features", nav_how: "How it works", nav_pricing: "Pricing", nav_cta: "Download",
         hero_badge: "Beta open — macOS 14+",
         hero_title: "The Mac utility for<br><span class=\"gradient\">Claude developers.</span>",
@@ -623,7 +679,7 @@ const TRANSLATIONS = {
         pricing_sub: "One-time purchase. No subscription. 1 year of updates included.",
         tier_free: "Free", free_desc: "Forever",
         fr1: "Single charge limit (20-100%)", fr2: "Battery health", fr3: "AI session detection", fr4: "Menu bar widget", fr5: "Critical notifications",
-        tier_pro: "Pro", once: "one time", pro_desc: "Perpetual license · 7-day free trial", badge_popular: "POPULAR",
+        tier_pro: "Pro", once: "one time", pro_desc: "Perpetual license · 7-day free trial", badge_popular: "7-DAY TRIAL", skip_link: "Skip to content",
         pr1: "Everything in Free", pr2: "Real-time Claude limits", pr3: "Voice-to-Text (local Whisper)", pr4: "Auto Focus AI", pr5: "Battery health charts", pr6: "Range mode (hysteresis)", pr7: "Temperature alerts",
         download_label: "Download", download_title: "Join the beta.",
         download_sub: "Download the DMG, drag PowerGuard into Applications. Updates then arrive automatically.",
@@ -735,6 +791,13 @@ function applyLang(lang) {
     const url = new URL(window.location);
     if (lang === 'en') url.searchParams.set('lang', 'en'); else url.searchParams.delete('lang');
     window.history.replaceState({}, '', url);
+
+    // Keep canonical + og:url in sync with the active language so the ?lang=en
+    // variant self-references instead of conflicting with the FR-root canonical.
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', url.href);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', url.href);
 
     localStorage.setItem('pg-lang', lang);
 }
