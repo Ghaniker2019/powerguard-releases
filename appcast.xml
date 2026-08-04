@@ -3,6 +3,15 @@
     <channel>
         <title>PowerGuard</title>
         <item>
+            <title>0.1.1</title>
+            <pubDate>Tue, 04 Aug 2026 05:16:13 +0200</pubDate>
+            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
+            <sparkle:version>28</sparkle:version>
+            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.1/PowerGuard-0.1.1.dmg" length="6706107" type="application/octet-stream" sparkle:edSignature="APXuhGyJij6KZ3MLNDslZhUgx4KtMVKs3z36EKHbTtNgPQ7wSujlb3iUpqs04PsFtklvfSwnHAaruNtoG4AhCw=="/>
+        </item>
+        <item>
             <title>0.1.0</title>
             <pubDate>Mon, 03 Aug 2026 20:00:43 +0200</pubDate>
             <link>https://ghaniker2019.github.io/powerguard-releases/</link>
