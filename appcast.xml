@@ -3,6 +3,15 @@
     <channel>
         <title>PowerGuard</title>
         <item>
+            <title>0.1.4</title>
+            <pubDate>Wed, 19 Aug 2026 23:50:30 +0200</pubDate>
+            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
+            <sparkle:version>33</sparkle:version>
+            <sparkle:shortVersionString>0.1.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.4/PowerGuard-0.1.4.dmg" length="6730885" type="application/octet-stream" sparkle:edSignature="zbFTXEHjmx+67Q0vr4peu9Y8S26HqvXde9fe/A3MiO7+0ga7F+yAfFcTmrXc7pHn7L8jxKdTRBmG1MrXP0KfAg=="/>
+        </item>
+        <item>
             <title>0.1.3</title>
             <pubDate>Tue, 04 Aug 2026 15:15:46 +0200</pubDate>
             <link>https://ghaniker2019.github.io/powerguard-releases/</link>
@@ -19,15 +28,6 @@
             <sparkle:shortVersionString>0.1.2</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.2/PowerGuard-0.1.2.dmg" length="6708947" type="application/octet-stream" sparkle:edSignature="aoIafGXP2dfNFYWgsIcfRNKe/fmVEoAowh+RGpNJdTlm3QTp2oPa3J06jU1fSjhFL5IuMkeZP7JCQiBqqa46Cg=="/>
-        </item>
-        <item>
-            <title>0.1.1</title>
-            <pubDate>Tue, 04 Aug 2026 05:16:13 +0200</pubDate>
-            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
-            <sparkle:version>28</sparkle:version>
-            <sparkle:shortVersionString>0.1.1</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.1/PowerGuard-0.1.1.dmg" length="6706107" type="application/octet-stream" sparkle:edSignature="APXuhGyJij6KZ3MLNDslZhUgx4KtMVKs3z36EKHbTtNgPQ7wSujlb3iUpqs04PsFtklvfSwnHAaruNtoG4AhCw=="/>
         </item>
     </channel>
 </rss>
