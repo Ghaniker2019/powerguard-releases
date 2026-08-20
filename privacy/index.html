@@ -43,8 +43,8 @@
     <h3>2.1 Données batterie (local)</h3>
     <p>L'app lit l'état de votre batterie via IOKit (charge, cycles, température, santé). Ces données <strong>ne quittent jamais votre Mac</strong>.</p>
 
-    <h3>2.2 Synchronisation Claude (local)</h3>
-    <p>Si vous connectez votre compte Claude, l'app utilise un WKWebView persistant pour se connecter à claude.ai avec vos identifiants. Les cookies Claude sont stockés localement dans votre profil WebKit. Les données d'utilisation (%, limites, plan) sont extraites et affichées dans l'app. <strong>Aucune donnée n'est envoyée à nos serveurs.</strong></p>
+    <h3>2.2 Suivi Claude (local)</h3>
+    <p>Le suivi d'usage Claude s'appuie sur le flux officiel « statusLine » de Claude Code (v2.1.80+). Claude Code fournit ces données (limites session/hebdomadaire, modèle courant, remplissage du contexte) à un script local que l'app lit dans un fichier sur votre Mac. <strong>Aucune session claude.ai, aucun cookie, aucun réseau, aucune donnée envoyée à nos serveurs.</strong> PowerGuard n'est pas affilié à Anthropic.</p>
 
     <h3>2.3 Dictée vocale (local)</h3>
     <p>L'audio enregistré via le microphone est transcrit localement par WhisperKit (CoreML). <strong>L'audio n'est jamais envoyé au cloud.</strong> Le texte est placé dans le presse-papiers.</p>
@@ -59,13 +59,13 @@
     <ul>
         <li><strong>Contrat :</strong> validation licence (Art. 6.1.b)</li>
         <li><strong>Intérêt légitime :</strong> fonctionnement de l'app (batterie, voix)</li>
-        <li><strong>Consentement :</strong> connexion Claude, microphone (permissions macOS explicites)</li>
+        <li><strong>Consentement :</strong> suivi Claude Code, microphone (permissions macOS explicites)</li>
     </ul>
 
     <h2>4. Durées de conservation</h2>
     <ul>
         <li>Données batterie : en mémoire uniquement, effacées à la fermeture</li>
-        <li>Cookies Claude : jusqu'à déconnexion manuelle (Préférences > Claude > Déconnecter)</li>
+        <li>Fichier de statut Claude Code : local, réécrit à chaque rendu de Claude Code</li>
         <li>Licence : 24h de cache + 7 jours de grâce hors-ligne</li>
         <li>Crash logs : jusqu'à purge manuelle</li>
         <li>Préférences : jusqu'à reset manuel ou désinstallation</li>
@@ -76,7 +76,7 @@
     <p>Vous pouvez aussi déposer une plainte auprès de la <a href="https://www.cnil.fr/" target="_blank" rel="noopener">CNIL</a>.</p>
 
     <h2>6. Cookies</h2>
-    <p>Le site <code>powerguard.app</code> ne pose aucun cookie traceur. L'application macOS stocke des cookies Claude.ai uniquement si vous vous connectez à Claude depuis l'app (stockage local WebKit, non partagé).</p>
+    <p>Le site <code>powerguard.app</code> ne pose aucun cookie traceur. L'application macOS ne stocke aucun cookie Claude : le suivi lit le flux officiel de Claude Code, en local.</p>
 
     <h2>7. Transferts internationaux</h2>
     <p>LemonSqueezy (sous-traitant paiement) est établi aux États-Unis. Le transfert est couvert par les clauses contractuelles types (SCC) de la Commission européenne.</p>
@@ -105,8 +105,8 @@
     <h3>2.1 Battery data (local)</h3>
     <p>The app reads your battery state via IOKit (charge, cycles, temperature, health). This data <strong>never leaves your Mac</strong>.</p>
 
-    <h3>2.2 Claude sync (local)</h3>
-    <p>If you connect your Claude account, the app uses a persistent WKWebView to sign in to claude.ai with your credentials. Claude cookies are stored locally in your WebKit profile. Usage data (%, limits, plan) is extracted and displayed in the app. <strong>No data is sent to our servers.</strong></p>
+    <h3>2.2 Claude tracking (local)</h3>
+    <p>Claude usage tracking relies on Claude Code's official statusLine feed (v2.1.80+). Claude Code hands this data (session/weekly limits, current model, context fill) to a local script, and the app reads it from a file on your Mac. <strong>No claude.ai session, no cookies, no network, no data sent to our servers.</strong> PowerGuard is not affiliated with Anthropic.</p>
 
     <h3>2.3 Voice dictation (local)</h3>
     <p>Microphone audio is transcribed locally by WhisperKit (CoreML). <strong>Audio never leaves your Mac.</strong> The text is placed in the clipboard.</p>
@@ -121,13 +121,13 @@
     <ul>
         <li><strong>Contract:</strong> license validation (Art. 6.1.b)</li>
         <li><strong>Legitimate interest:</strong> app functionality (battery, voice)</li>
-        <li><strong>Consent:</strong> Claude login, microphone (explicit macOS permissions)</li>
+        <li><strong>Consent:</strong> Claude Code tracking, microphone (explicit macOS permissions)</li>
     </ul>
 
     <h2>4. Retention</h2>
     <ul>
         <li>Battery data: in-memory only, cleared on app close</li>
-        <li>Claude cookies: until manual disconnect (Preferences > Claude > Disconnect)</li>
+        <li>Claude Code status file: local, rewritten on every Claude Code render</li>
         <li>License: 24h cache + 7-day offline grace</li>
         <li>Crash logs: until manually purged</li>
         <li>Preferences: until manual reset or uninstall</li>
@@ -138,7 +138,7 @@
     <p>You can also file a complaint with your local data protection authority.</p>
 
     <h2>6. Cookies</h2>
-    <p>The <code>powerguard.app</code> website sets no tracking cookies. The macOS app only stores Claude.ai cookies if you connect to Claude (local WebKit storage, not shared).</p>
+    <p>The <code>powerguard.app</code> website sets no tracking cookies. The macOS app stores no Claude cookies: tracking reads Claude Code's official feed, locally.</p>
 
     <h2>7. International Transfers</h2>
     <p>LemonSqueezy (payment processor) is based in the United States. Transfers are covered by Standard Contractual Clauses (SCCs).</p>
