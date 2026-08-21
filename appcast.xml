@@ -3,6 +3,16 @@
     <channel>
         <title>PowerGuard</title>
         <item>
+            <title>0.1.9</title>
+            <pubDate>Fri, 21 Aug 2026 07:25:38 +0200</pubDate>
+            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
+            <sparkle:version>48</sparkle:version>
+            <sparkle:shortVersionString>0.1.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://ghaniker2019.github.io/powerguard-releases/PowerGuard-0.1.9.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.9/PowerGuard-0.1.9.dmg" length="7795874" type="application/octet-stream" sparkle:edSignature="STT8wkX8x+vYQJ5jX8X10ybH4NZUpwtPuWYvZDymLSD4rDSMp36iOvfFfvKcs25b8aQAqIf7MCutpkmg0r82Dg=="/>
+        </item>
+        <item>
             <title>0.1.7</title>
             <pubDate>Thu, 20 Aug 2026 15:01:56 +0200</pubDate>
             <link>https://ghaniker2019.github.io/powerguard-releases/</link>
@@ -19,15 +29,6 @@
             <sparkle:shortVersionString>0.1.6</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.6/PowerGuard-0.1.6.dmg" length="7613230" type="application/octet-stream" sparkle:edSignature="STcIzdz+rghPwdlLMWhwF2him4nXim8s2kG8zzjIWv166INPG9Dgb/JpVy5QafOaw+R/t9I0pjAAWlOVVPPcDw=="/>
-        </item>
-        <item>
-            <title>0.1.5</title>
-            <pubDate>Thu, 20 Aug 2026 14:03:16 +0200</pubDate>
-            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
-            <sparkle:version>36</sparkle:version>
-            <sparkle:shortVersionString>0.1.5</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.5/PowerGuard-0.1.5.dmg" length="6641413" type="application/octet-stream" sparkle:edSignature="9U16BpEKAyAZyqccy1SGxnBeaEfDCbGz/IylqqfHivTqpImkAbeHzRgewn1Rx5XBQErQM0zghjzRmR6lP52jCg=="/>
         </item>
     </channel>
 </rss>
