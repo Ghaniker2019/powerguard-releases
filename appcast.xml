@@ -3,6 +3,16 @@
     <channel>
         <title>PowerGuard</title>
         <item>
+            <title>0.1.22</title>
+            <pubDate>Fri, 04 Sep 2026 17:43:06 +0200</pubDate>
+            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
+            <sparkle:version>91</sparkle:version>
+            <sparkle:shortVersionString>0.1.22</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://ghaniker2019.github.io/powerguard-releases/PowerGuard-0.1.22.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.22/PowerGuard-0.1.22.dmg" length="8041516" type="application/octet-stream" sparkle:edSignature="xyVH6qyp1CiJnmR6Z0VDaS9BnnkTQxHz2jR7ccbE1Z9RYSYmt7w5+aoLIHmyPMuhc5Ikpt0dU4zYo/+dI/cpAw=="/>
+        </item>
+        <item>
             <title>0.1.21</title>
             <pubDate>Fri, 04 Sep 2026 04:30:23 +0200</pubDate>
             <link>https://ghaniker2019.github.io/powerguard-releases/</link>
@@ -21,16 +31,6 @@
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://ghaniker2019.github.io/powerguard-releases/PowerGuard-0.1.20.html</sparkle:releaseNotesLink>
             <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.20/PowerGuard-0.1.20.dmg" length="8016369" type="application/octet-stream" sparkle:edSignature="jq7dygzAumyAbtgR6VWgr47yYnTpxUEiCNVQJEh7bF91cymUN/gjav8/PKLksMGUfue/uzv+V9QA997oFgmXBQ=="/>
-        </item>
-        <item>
-            <title>0.1.19</title>
-            <pubDate>Thu, 03 Sep 2026 00:47:55 +0200</pubDate>
-            <link>https://ghaniker2019.github.io/powerguard-releases/</link>
-            <sparkle:version>70</sparkle:version>
-            <sparkle:shortVersionString>0.1.19</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://ghaniker2019.github.io/powerguard-releases/PowerGuard-0.1.19.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/Ghaniker2019/powerguard-releases/releases/download/v0.1.19/PowerGuard-0.1.19.dmg" length="7995193" type="application/octet-stream" sparkle:edSignature="SKxGD+Y7WPTVetir0rG5GF7ursCczQgS2gfiNIDnbcEiAFphU3z5bnxekU9wxTiHnkIfygOs2QcvtZiZEPzsAQ=="/>
         </item>
     </channel>
 </rss>
