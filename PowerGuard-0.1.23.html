@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
+body{font:13px -apple-system,sans-serif;color:#ddd;background:#1c1c1f;margin:14px;line-height:1.5}
+h2{font-size:15px;margin:0 0 8px}li{margin-bottom:4px}.tag{color:#7ab6ff}
+</style></head><body>
+<h2>PowerGuard 0.1.23</h2>
+<ul>
+<li><span class="tag">Corrigé</span> — Sur les Mac installés depuis le DMG, le service de contrôle de la batterie ne démarrait pas : la limite de charge n'était jamais appliquée. Il démarre désormais. macOS peut demander d'autoriser PowerGuard dans Réglages Système › Général › Ouverture ; PowerGuard l'indique et ouvre le réglage.</li>
+<li><span class="tag">Corrigé</span> — Après une mise à jour, le service de contrôle est redémarré dans sa nouvelle version au lieu de garder l'ancienne jusqu'au redémarrage du Mac.</li>
+<li><span class="tag">Corrigé</span> — Sur les Mac à firmware ancien, le maintien de la charge au seuil pouvait couper l'alimentation secteur au lieu de simplement bloquer la charge : le Mac se vidait alors sur batterie. Le maintien n'agit plus que sur la charge.</li>
+<li><span class="tag">Corrigé</span> — Quand une protection bloque la charge (surchauffe, contrôle désactivé, mode plage inactif), PowerGuard rétablit d'abord l'alimentation secteur s'il l'avait coupée.</li>
+<li><span class="tag">Corrigé</span> — Les décisions de charge continuent pendant que le menu PowerGuard est ouvert.</li>
+<li><span class="tag">Corrigé</span> — Après une interruption du service de contrôle de la batterie, la connexion se rétablit au lieu de se perdre.</li>
+<li><span class="tag">Amélioré</span> — Le menu indique « Maintenue à X % · seuil Y % » quand la charge est bloquée au-dessus du seuil, au lieu de « Protégée à Y % ».</li>
+<li><span class="tag">Note</span> — Mode plage : la décharge forcée est suspendue dans cette version, le temps d'ajouter une protection renforcée. PowerGuard maintient simplement la charge au seuil, sans couper le secteur. Vos réglages sont conservés.</li>
+</ul>
+</body></html>
