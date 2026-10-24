@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
+body{font:13px -apple-system,sans-serif;color:#ddd;background:#1c1c1f;margin:14px;line-height:1.5}
+h2{font-size:15px;margin:0 0 8px}li{margin-bottom:4px}.tag{color:#7ab6ff}
+</style></head><body>
+<h2>PowerGuard 0.1.26</h2>
+<ul>
+<li><span class="tag">Corrigé</span> — PowerGuard s'ouvre désormais vraiment à l'ouverture de session. L'interrupteur « Lancer au démarrage » s'affichait activé sans que rien ne soit enregistré : après un redémarrage, le seuil n'était plus appliqué. Les installations existantes sont réparées une fois, au premier lancement, sauf si vous l'aviez désactivé (Préférences › Général pour changer).</li>
+<li><span class="tag">Corrigé</span> — La pause thermique fonctionne enfin : au-dessus de 35 °C, la charge est suspendue ; elle reprend sous 32 °C. Le menu affiche « Pause thermique » et l'icône passe à l'orange. Une descente en cours s'interrompt ; une descente que vous aviez lancée reprend une fois la batterie refroidie, une descente automatique attend le branchement suivant.</li>
+<li><span class="tag">Nouveau</span> — « Garder éveillé » : une tuile du menu garde le Mac éveillé 20 min, 1 h, 2 h ou 4 h, ou tant que Claude travaille (arrêt après 10 min sans activité, 8 h au maximum, jamais sous 20 % sur batterie). Option pour garder aussi l'écran allumé. Gratuit.</li>
+<li><span class="tag">Nouveau (Pro)</span> — Descente au seuil : branché au-dessus de votre seuil, « Descendre à X % maintenant » fait redescendre la batterie jusqu'au seuil, puis le maintien reprend. Annulable à tout moment ; le service rétablit seul l'alimentation si l'app ne répond plus ou si la batterie passe sous 20 %. En mode plage, la descente se fait automatiquement, une fois par branchement.</li>
+<li><span class="tag">Corrigé</span> — Suivi Claude (synchro en temps réel) : après une mise en veille pendant le renouvellement de la fenêtre de 5 h, la carte n'affiche plus de chiffres périmés.</li>
+<li><span class="tag">Corrigé</span> — Suivi Claude (synchro en temps réel) : PowerGuard ne lit plus les identifiants de Claude Code en arrière-plan, quand personne n'est là pour répondre à une demande du trousseau. Les chiffres du compte se mettent à jour au lancement, à l'ouverture du menu et avec « Actualiser » ; entre-temps, la carte suit vos sessions Claude Code.</li>
+<li><span class="tag">Corrigé</span> — Désactiver le suivi Claude Code (ou désinstaller PowerGuard) retire vraiment le relais des réglages de Claude Code ; jusqu'ici, il restait en place.</li>
+<li><span class="tag">Corrigé</span> — L'icône de la barre des menus reprend ses couleurs sous macOS 26 : verte quand la charge est maintenue au seuil, orange pendant une descente ou une pause thermique, rouge quand une limite Claude est atteinte.</li>
+<li><span class="tag">Supprimé</span> — Le rappel de calibration, qui se déclenchait à chaque lancement sans pouvoir être coupé.</li>
+<li><span class="tag">Réglage</span> — Nouvel onglet « À propos » : mises à jour, signalement de bug, export des logs et désinstallation complète (la charge est rétablie et confirmée avant de retirer le service). Les notifications sont regroupées dans Général et Claude Sync, et « Activer le suivi » dans le menu ouvre directement Claude Sync.</li>
+</ul>
+</body></html>
