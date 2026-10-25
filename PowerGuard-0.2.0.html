@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><style>
+body{font:13px -apple-system,sans-serif;color:#ddd;background:#1c1c1f;margin:14px;line-height:1.5}
+h2{font-size:15px;margin:0 0 8px}li{margin-bottom:4px}.tag{color:#7ab6ff}
+</style></head><body>
+<h2>PowerGuard 0.2.0</h2>
+<ul>
+<li><span class="tag">Recentrage</span> — PowerGuard se concentre sur trois choses : le contrôle de charge, le suivi de vos limites Claude et la santé de votre batterie.</li>
+<li><span class="tag">Supprimé</span> — La dictée vocale (Whisper) et le raccourci Ctrl+Option+Espace. Pour dicter, utilisez la dictée de macOS (Réglages Système › Clavier › Dictée). Les modèles Whisper téléchargés (jusqu'à 3 Go) sont supprimés au premier lancement. Les autorisations Micro, Accessibilité et Surveillance de l'entrée ne servent plus : vous pouvez retirer PowerGuard de ces listes dans Réglages Système › Confidentialité et sécurité.</li>
+<li><span class="tag">Supprimé</span> — Focus IA (pause de Spotlight et de Time Machine, activation automatique). « Garder éveillé » le remplace, gratuitement.</li>
+<li><span class="tag">Corrigé</span> — Après une mise à jour, le contrôle de charge reprend sans redémarrer le Mac. Jusqu'ici, le service de l'ancienne version refusait la nouvelle app : la charge restait autorisée sans seuil jusqu'au redémarrage suivant. Pour cette mise à jour-ci, il reprend au plus tard deux minutes après l'installation.</li>
+<li><span class="tag">Corrigé</span> — Si Focus IA avait laissé l'indexation Spotlight suspendue, elle est réactivée une fois, au premier lancement. Une réindexation peut suivre ; <code>sudo mdutil -i off /</code> la coupe de nouveau si vous le souhaitez.</li>
+<li><span class="tag">Amélioré</span> — « Garder éveillé », en mode « tant que Claude travaille », reconnaît exactement Claude Code : l'app Claude de bureau ou une recherche dans un terminal ne comptent plus.</li>
+<li><span class="tag">Nouveau</span> — L'assistant de bienvenue active le suivi Claude Code en un clic ; la carte Claude indique « en attente d'une session » jusqu'au premier message.</li>
+<li><span class="tag">Nouveau (Pro)</span> — Carte Claude : vos sessions Claude Code récemment fermées, à rouvrir dans Terminal (la conversation reprend) ou à oublier d'un clic.</li>
+<li><span class="tag">Sécurité</span> — PowerGuard ne demande plus l'accès au microphone.</li>
+<li><span class="tag">Note</span> — Pro regroupe désormais trois fonctions : Suivi Claude, Mode plage et descente automatique, Graphiques santé batterie. La fenêtre Pro est traduite en anglais, espagnol et italien. Rien ne change pour votre licence ou votre essai.</li>
+</ul>
+</body></html>

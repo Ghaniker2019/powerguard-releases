@@ -36,7 +36,7 @@
 <!-- ================= FR ================= -->
 <article data-lang-content="fr">
     <h1>Politique de confidentialité</h1>
-    <div class="meta">Dernière mise à jour : 16 avril 2026</div>
+    <div class="meta">Dernière mise à jour : 25 octobre 2026</div>
 
     <p>PowerGuard est une application macOS de gestion de batterie et d'utilisation Claude. Cette politique explique quelles données sont collectées, pourquoi, combien de temps elles sont conservées, et comment exercer vos droits.</p>
 
@@ -49,22 +49,22 @@
     <p>L'app lit l'état de votre batterie via IOKit (charge, cycles, température, santé). Ces données <strong>ne quittent jamais votre Mac</strong>.</p>
 
     <h3>2.2 Suivi Claude (local)</h3>
-    <p>Le suivi d'usage Claude s'appuie sur le flux officiel « statusLine » de Claude Code (v2.1.80+). Claude Code fournit ces données (limites session/hebdomadaire, modèle courant, remplissage du contexte) à un script local que l'app lit dans un fichier sur votre Mac. <strong>Aucune session claude.ai, aucun cookie, aucun réseau, aucune donnée envoyée à nos serveurs.</strong> PowerGuard n'est pas affilié à Anthropic.</p>
+    <p>Le suivi d'usage Claude s'appuie sur le flux officiel « statusLine » de Claude Code (v2.1.80+). Claude Code fournit ces données (limites session/hebdomadaire, modèle courant, remplissage du contexte) à un script local que l'app lit dans un fichier sur votre Mac. <strong>Aucune session claude.ai, aucun cookie, aucun réseau pour ce suivi, aucune donnée envoyée à nos serveurs.</strong> PowerGuard n'est pas affilié à Anthropic.</p>
 
-    <h3>2.3 Dictée vocale (local)</h3>
-    <p>L'audio enregistré via le microphone est transcrit localement par WhisperKit (CoreML). <strong>L'audio n'est jamais envoyé au cloud.</strong> Le texte est placé dans le presse-papiers.</p>
+    <h3>2.3 Synchro temps réel Claude (optionnelle, Pro)</h3>
+    <p>Désactivée par défaut. Si vous l'activez (Préférences › Claude Sync), PowerGuard lit le jeton de connexion de Claude Code dans votre trousseau macOS — macOS vous demande l'autorisation une fois — et envoie une requête en lecture seule à <code>api.anthropic.com</code> pour obtenir l'usage réel de votre compte (web et app compris). <strong>Le jeton n'est ni copié ni journalisé par PowerGuard</strong> ; seuls les pourcentages d'usage et leurs heures de remise à zéro sont gardés, dans les préférences de l'app sur votre Mac. Destinataire : Anthropic, selon sa propre politique de confidentialité. Vous pouvez désactiver la synchro à tout moment au même endroit.</p>
 
     <h3>2.4 Licence (LemonSqueezy)</h3>
     <p>Lors de l'activation d'une licence Pro, votre email et un identifiant machine (UUID hardware tronqué) sont envoyés à LemonSqueezy pour valider la clé. LemonSqueezy agit comme sous-traitant au sens du RGPD (Art. 28). Voir leur politique : <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a>.</p>
 
     <h3>2.5 Crash logs (local)</h3>
-    <p>En cas de crash, un rapport est écrit dans <code>~/Library/Application Support/PowerGuard/CrashLogs/</code>. <strong>Aucune transmission automatique.</strong> Vous pouvez exporter manuellement via Préférences > Avancé.</p>
+    <p>En cas de crash, un rapport est écrit dans <code>~/Library/Application Support/PowerGuard/CrashLogs/</code>. <strong>Aucune transmission automatique.</strong> Vous pouvez les exporter manuellement via Préférences › À propos › Exporter les logs.</p>
 
     <h2>3. Base légale (RGPD)</h2>
     <ul>
         <li><strong>Contrat :</strong> validation licence (Art. 6.1.b)</li>
-        <li><strong>Intérêt légitime :</strong> fonctionnement de l'app (batterie, voix)</li>
-        <li><strong>Consentement :</strong> suivi Claude Code, microphone (permissions macOS explicites)</li>
+        <li><strong>Intérêt légitime :</strong> fonctionnement de l'app (batterie, maintien en éveil)</li>
+        <li><strong>Consentement :</strong> suivi Claude Code (installation par un bouton explicite), synchro temps réel (interrupteur désactivé par défaut et autorisation du trousseau macOS)</li>
     </ul>
 
     <h2>4. Durées de conservation</h2>
@@ -84,7 +84,7 @@
     <p>Le site <code>powerguard.app</code> ne pose aucun cookie traceur. L'application macOS ne stocke aucun cookie Claude : le suivi lit le flux officiel de Claude Code, en local.</p>
 
     <h2>7. Transferts internationaux</h2>
-    <p>LemonSqueezy (sous-traitant paiement) est établi aux États-Unis. Le transfert est couvert par les clauses contractuelles types (SCC) de la Commission européenne.</p>
+    <p>LemonSqueezy (sous-traitant paiement) est établi aux États-Unis. Le transfert est couvert par les clauses contractuelles types (SCC) de la Commission européenne. Si vous activez la synchro temps réel, la requête part vers Anthropic (États-Unis), votre fournisseur Claude.</p>
 
     <div class="callout ccpa">
         <h3 style="margin-top:0">🇺🇸 California Residents (CCPA)</h3>
@@ -98,7 +98,7 @@
 <!-- ================= EN ================= -->
 <article data-lang-content="en" style="display:none;">
     <h1>Privacy Policy</h1>
-    <div class="meta">Last updated: April 16, 2026</div>
+    <div class="meta">Last updated: October 25, 2026</div>
 
     <p>PowerGuard is a macOS battery management and Claude usage app. This policy explains what data is collected, why, how long it's kept, and how to exercise your rights.</p>
 
@@ -111,22 +111,22 @@
     <p>The app reads your battery state via IOKit (charge, cycles, temperature, health). This data <strong>never leaves your Mac</strong>.</p>
 
     <h3>2.2 Claude tracking (local)</h3>
-    <p>Claude usage tracking relies on Claude Code's official statusLine feed (v2.1.80+). Claude Code hands this data (session/weekly limits, current model, context fill) to a local script, and the app reads it from a file on your Mac. <strong>No claude.ai session, no cookies, no network, no data sent to our servers.</strong> PowerGuard is not affiliated with Anthropic.</p>
+    <p>Claude usage tracking relies on Claude Code's official statusLine feed (v2.1.80+). Claude Code hands this data (session/weekly limits, current model, context fill) to a local script, and the app reads it from a file on your Mac. <strong>No claude.ai session, no cookies, no network for this tracking, no data sent to our servers.</strong> PowerGuard is not affiliated with Anthropic.</p>
 
-    <h3>2.3 Voice dictation (local)</h3>
-    <p>Microphone audio is transcribed locally by WhisperKit (CoreML). <strong>Audio never leaves your Mac.</strong> The text is placed in the clipboard.</p>
+    <h3>2.3 Claude live sync (optional, Pro)</h3>
+    <p>Off by default. If you turn it on (Preferences › Claude Sync), PowerGuard reads Claude Code's sign-in token from your macOS Keychain — macOS asks for your permission once — and sends a read-only request to <code>api.anthropic.com</code> to get your account's real usage (web and app included). <strong>PowerGuard never copies or logs the token</strong>; only the usage percentages and their reset times are kept, in the app's preferences on your Mac. Recipient: Anthropic, under its own privacy policy. You can turn the sync off at any time in the same place.</p>
 
     <h3>2.4 License (LemonSqueezy)</h3>
     <p>When activating a Pro license, your email and a truncated machine UUID are sent to LemonSqueezy to validate the key. LemonSqueezy acts as a data processor (GDPR Art. 28). See their policy: <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a>.</p>
 
     <h3>2.5 Crash logs (local)</h3>
-    <p>On crash, a report is written to <code>~/Library/Application Support/PowerGuard/CrashLogs/</code>. <strong>No automatic transmission.</strong> You can export manually via Preferences > Advanced.</p>
+    <p>On crash, a report is written to <code>~/Library/Application Support/PowerGuard/CrashLogs/</code>. <strong>No automatic transmission.</strong> You can export them manually via Preferences › About › Export logs.</p>
 
     <h2>3. Legal Basis (GDPR)</h2>
     <ul>
         <li><strong>Contract:</strong> license validation (Art. 6.1.b)</li>
-        <li><strong>Legitimate interest:</strong> app functionality (battery, voice)</li>
-        <li><strong>Consent:</strong> Claude Code tracking, microphone (explicit macOS permissions)</li>
+        <li><strong>Legitimate interest:</strong> app functionality (battery, keep-awake)</li>
+        <li><strong>Consent:</strong> Claude Code tracking (installed by an explicit button), live sync (switch off by default and macOS Keychain permission)</li>
     </ul>
 
     <h2>4. Retention</h2>
@@ -146,7 +146,7 @@
     <p>The <code>powerguard.app</code> website sets no tracking cookies. The macOS app stores no Claude cookies: tracking reads Claude Code's official feed, locally.</p>
 
     <h2>7. International Transfers</h2>
-    <p>LemonSqueezy (payment processor) is based in the United States. Transfers are covered by Standard Contractual Clauses (SCCs).</p>
+    <p>LemonSqueezy (payment processor) is based in the United States. Transfers are covered by Standard Contractual Clauses (SCCs). If you turn on the live sync, the request goes to Anthropic (United States), your Claude provider.</p>
 
     <div class="callout ccpa">
         <h3 style="margin-top:0">🇺🇸 California Residents (CCPA)</h3>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">PowerGuard — Limiteur de charge Mac &amp; suivi d'usage Claude</title>
-    <meta name="description" data-i18n-attr="content" data-i18n="description" content="App menu bar macOS : limitez la charge de votre MacBook (20–100 %), suivez vos limites Claude en temps réel, dictée vocale locale. Alternative à AlDente, notarisée Apple.">
-    <meta name="keywords" content="limiteur de charge Mac, battery charge limit macOS, AlDente alternative, suivi usage Claude, Claude usage tracker, menu bar app, dictée vocale locale, Whisper Mac">
+    <meta name="description" data-i18n-attr="content" data-i18n="description" content="App menu bar macOS : limitez la charge de votre MacBook (20–100 %), suivez vos limites Claude en temps réel, surveillez la santé de votre batterie. Alternative à AlDente, notarisée Apple.">
+    <meta name="keywords" content="limiteur de charge Mac, battery charge limit macOS, AlDente alternative, suivi usage Claude, Claude usage tracker, menu bar app, santé batterie Mac, Claude Code usage">
     <meta name="theme-color" content="#0a0a0f">
     <!-- Site served at github.io until the powerguard.app domain is live -->
     <link rel="canonical" href="https://ghaniker2019.github.io/powerguard-releases/">
@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ghaniker2019.github.io/powerguard-releases/">
     <meta property="og:title" content="PowerGuard — Mac charge limiter & Claude usage tracker">
-    <meta property="og:description" content="macOS menu bar app for AI developers: battery charge limit, Claude usage tracking, local voice-to-text. A notarized AlDente alternative.">
+    <meta property="og:description" content="macOS menu bar app for AI developers: battery charge limit, Claude usage tracking, battery health. A notarized AlDente alternative.">
     <meta property="og:image" content="https://ghaniker2019.github.io/powerguard-releases/og-image.png">
     <meta property="og:image:alt" content="PowerGuard — macOS menu bar app for battery charge limit and Claude usage tracking">
     <meta property="og:locale" content="fr_FR">
@@ -26,7 +26,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PowerGuard — The macOS utility for Claude developers">
-    <meta name="twitter:description" content="Battery control + Claude usage tracking + Voice-to-text. All in your menu bar.">
+    <meta name="twitter:description" content="Battery control + Claude usage tracking + battery health. All in your menu bar.">
     <meta name="twitter:image" content="https://ghaniker2019.github.io/powerguard-releases/og-image.png">
 
     <!-- JSON-LD: SoftwareApplication -->
@@ -35,11 +35,11 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "PowerGuard",
-        "description": "App menu bar macOS qui limite la charge de votre MacBook (20–100 %) via le SMC, suit vos limites d'usage Claude en temps réel, transcrit la voix localement avec Whisper, et affiche la santé batterie.",
+        "description": "App menu bar macOS qui limite la charge de votre MacBook (20–100 %) via le SMC, suit vos limites d'usage Claude en temps réel et en local, et affiche la santé de votre batterie.",
         "applicationCategory": "DeveloperApplication",
         "applicationSubCategory": "Utility",
         "operatingSystem": "macOS",
-        "softwareVersion": "0.1.3",
+        "softwareVersion": "0.2.0",
         "softwareRequirements": "macOS 14 (Sonoma) ou plus ; Apple Silicon ou Intel",
         "datePublished": "2026-08-03",
         "url": "https://ghaniker2019.github.io/powerguard-releases/",
@@ -47,11 +47,10 @@
         "image": "https://ghaniker2019.github.io/powerguard-releases/og-image.png",
         "author": { "@type": "Organization", "name": "PowerGuard" },
         "featureList": [
-            "Limite de charge 20–100 % via SMC",
-            "Suivi des limites d'usage Claude (session, hebdo, par modèle)",
-            "Dictée vocale locale (Whisper)",
-            "Mode Focus auto pour les sessions IA",
-            "Graphiques de santé batterie"
+            "Limite de charge 20–100 % via SMC, mode plage avec descente automatique (Pro)",
+            "Suivi des limites d'usage Claude (session, hebdo, contexte) lu en local depuis Claude Code",
+            "Le Mac reste éveillé tant que Claude travaille",
+            "Graphiques de santé batterie (Pro)"
         ],
         "offers": [
             { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "name": "Gratuit" },
@@ -67,16 +66,14 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            { "@type": "Question", "name": "macOS 26.4 a déjà le charge limit natif. Pourquoi PowerGuard ?", "acceptedAnswer": { "@type": "Answer", "text": "Le charge limit natif d'Apple est limité à 80-100%. PowerGuard va de 20 à 100% avec hystérésis + pause thermique. Surtout, PowerGuard ajoute 4 features qu'Apple ne fait pas : suivi Claude, voice-to-text local, Focus IA auto, et graphiques santé batterie. C'est une utility suite complète pour les devs IA, pas juste un charge limiter." } },
+            { "@type": "Question", "name": "macOS 26.4 a déjà le charge limit natif. Pourquoi PowerGuard ?", "acceptedAnswer": { "@type": "Answer", "text": "Le charge limit natif d'Apple est limité à 80–100 %. PowerGuard va de 20 à 100 % avec mode plage et pause thermique, et ajoute ce qu'Apple ne fait pas : le suivi de vos limites Claude en temps réel, l'historique de santé batterie et un Mac qui reste éveillé tant que Claude travaille." } },
             { "@type": "Question", "name": "Est-ce dangereux pour ma batterie ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. PowerGuard pilote le SMC, le contrôleur qu'utilise macOS lui-même pour gérer la charge. Un mécanisme fail-safe réactive la charge en cas d'erreur. Limiter la charge autour de 60-80% réduit l'usure d'une batterie maintenue en permanence à 100% — un principe reconnu de longévité des batteries lithium-ion. Comme toute intervention logicielle, le résultat ne peut être garanti à 100% (voir nos Conditions)." } },
-            { "@type": "Question", "name": "D'où viennent les données d'usage Claude ?", "acceptedAnswer": { "@type": "Answer", "text": "Du flux officiel « statusLine » de Claude Code (v2.1.80+), que Claude Code fournit localement à PowerGuard. Aucun scraping, aucune session claude.ai, aucun réseau. Les limites (session 5h, hebdomadaire), le modèle courant et le remplissage du contexte viennent directement de Claude Code, pour les abonnés Pro/Max." } },
-            { "@type": "Question", "name": "Mes données vont-elles quelque part ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucune donnée d'usage ne quitte votre Mac. Tout est traité en local : batterie via IOKit, voix via WhisperKit, et le suivi Claude lit le flux officiel « statusLine » de Claude Code, en local. Aucune analytics, aucune télémétrie. Les seules connexions sortantes sont la vérification des mises à jour et, si vous achetez Pro, la validation de licence." } },
+            { "@type": "Question", "name": "D'où viennent les données d'usage Claude ?", "acceptedAnswer": { "@type": "Answer", "text": "Du flux officiel « statusLine » de Claude Code (v2.1.80+), que Claude Code fournit localement à PowerGuard : aucun scraping, aucune session claude.ai, aucune connexion réseau pour ce suivi. Les limites (session 5 h, hebdomadaire), le modèle courant et le remplissage du contexte viennent directement de Claude Code, pour les abonnés Pro/Max. En option (Pro, désactivée par défaut), la synchro temps réel interroge Anthropic en lecture seule avec votre login Claude Code pour afficher l'usage réel de votre compte (web et app compris)." } },
+            { "@type": "Question", "name": "Mes données vont-elles quelque part ?", "acceptedAnswer": { "@type": "Answer", "text": "Aucune donnée d'usage ne quitte votre Mac. Tout est traité en local : batterie via IOKit, suivi Claude via le flux « statusLine » de Claude Code. Aucune analytics, aucune télémétrie. Connexions sortantes : la vérification des mises à jour (Sparkle), la validation de licence si vous achetez Pro, et — seulement si vous l'activez — la requête de synchro temps réel vers Anthropic avec votre login Claude Code. Voir notre politique de confidentialité." } },
             { "@type": "Question", "name": "Fonctionne sur Intel Mac ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. PowerGuard est un binaire universal (arm64 + x86_64). Fonctionne sur MacBook Intel depuis 2015 et tous les Apple Silicon (M1/M2/M3/M4). Requiert macOS 14 (Sonoma) ou plus." } },
             { "@type": "Question", "name": "Puis-je être remboursé ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, garantie 30 jours satisfait ou remboursé. Écrivez à ghanikerkoub@gmail.com avec votre email de licence — remboursement sous 5 jours ouvrés via LemonSqueezy, aucune question." } },
-            { "@type": "Question", "name": "Le raccourci Ctrl+Option+Space est-il personnalisable ?", "acceptedAnswer": { "@type": "Answer", "text": "Pas encore. Le hotkey est fixé pour garantir qu'il ne conflicte pas avec les raccourcis système. La personnalisation arrive dans une prochaine version." } },
             { "@type": "Question", "name": "Combien de Macs par licence ?", "acceptedAnswer": { "@type": "Answer", "text": "Jusqu'à 3 Macs personnels que vous possédez. La licence est perpétuelle et inclut 1 an de mises à jour." } },
-            { "@type": "Question", "name": "Pourquoi PowerGuard demande un service privilégié ?", "acceptedAnswer": { "@type": "Answer", "text": "Le contrôle SMC nécessite un accès root (c'est macOS qui l'impose). PowerGuard utilise un helper XPC signé Apple (SMAppService) avec un accès minimal — uniquement aux registres SMC de charge. Aucun accès réseau, aucun accès à vos fichiers." } },
-            { "@type": "Question", "name": "Combien pèse le modèle Whisper ?", "acceptedAnswer": { "@type": "Answer", "text": "Le modèle large-v3 pèse ~1.5 GB (téléchargé une seule fois depuis Hugging Face au premier usage voice). Vous pouvez aussi utiliser le modèle base (~75 MB) — moins précis mais 10× plus rapide." } }
+            { "@type": "Question", "name": "Pourquoi PowerGuard demande un service privilégié ?", "acceptedAnswer": { "@type": "Answer", "text": "Le contrôle SMC nécessite un accès root (c'est macOS qui l'impose). PowerGuard utilise un helper XPC signé Apple (SMAppService) avec un accès minimal — uniquement aux registres SMC de charge. Aucun accès réseau, aucun accès à vos fichiers." } }
         ]
     }
     </script>
@@ -176,8 +173,6 @@
         .feature-card:nth-child(1) { --card-accent:var(--blue); --icon-bg:rgba(0,122,255,0.1); --icon-border:rgba(0,122,255,0.15); }
         .feature-card:nth-child(2) { --card-accent:var(--purple); --icon-bg:rgba(88,86,214,0.1); --icon-border:rgba(88,86,214,0.15); }
         .feature-card:nth-child(3) { --card-accent:var(--green); --icon-bg:rgba(48,209,88,0.1); --icon-border:rgba(48,209,88,0.15); }
-        .feature-card:nth-child(4) { --card-accent:var(--orange); --icon-bg:rgba(255,159,10,0.1); --icon-border:rgba(255,159,10,0.15); }
-        .feature-card:nth-child(5) { --card-accent:var(--cyan); --icon-bg:rgba(50,173,230,0.1); --icon-border:rgba(50,173,230,0.15); }
 
         .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
         .step { text-align:center; padding:32px 24px; position:relative; }
@@ -339,7 +334,7 @@
         <div class="hero-text">
             <div class="hero-badge"><span class="dot"></span><span data-i18n="hero_badge">Beta ouverte — macOS 14+</span></div>
             <h1 data-i18n-html="hero_title">L'outil Mac pour<br><span class="gradient">les devs Claude.</span></h1>
-            <p data-i18n="hero_sub">Suivi limites Claude, dictée vocale locale, contrôle batterie, Focus IA auto. Cinq utilitaires en un, dans votre menu bar.</p>
+            <p data-i18n="hero_sub">Limitez la charge de votre MacBook, suivez vos limites Claude en temps réel, surveillez la santé de votre batterie. Trois outils, une icône dans la barre des menus.</p>
             <div class="hero-actions">
                 <a href="#download" class="btn-primary">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12L3 7h3V1h4v6h3L8 12z"/><path d="M14 14H2v-2h12v2z"/></svg>
@@ -373,14 +368,12 @@
 <section id="features">
     <div class="container">
         <div class="section-label reveal" data-i18n="features_label">Fonctionnalités</div>
-        <h2 class="section-title reveal" data-i18n="features_title">5 piliers. Un seul menu bar.</h2>
+        <h2 class="section-title reveal" data-i18n="features_title">Trois piliers. Une seule barre des menus.</h2>
         <p class="section-sub reveal" data-i18n="features_sub">Chaque feature est conçue pour les développeurs qui poussent leur MacBook avec des outils IA.</p>
         <div class="features-grid">
-            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🔋</div><h3 data-i18n="f1_title">Battery Control</h3><p data-i18n="f1_desc">Seuil de charge 20-100% via SMC. Hystérésis configurable. Pause thermique automatique quand la température monte.</p><span class="tag">SMC · XPC · Root</span></div>
-            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">📊</div><h3 data-i18n="f2_title">Claude Usage</h3><p data-i18n="f2_desc">Vos limites en temps réel : session (5h), hebdomadaire, remplissage du contexte. Lu depuis le flux officiel de Claude Code, en local.</p><span class="tag">Claude Code · statusLine · Local</span></div>
-            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🎤</div><h3 data-i18n="f3_title">Voice-to-Text</h3><p data-i18n="f3_desc">Whisper large-v3 local. Dictez avec Ctrl+Option+Space, le texte est collé automatiquement. Zéro cloud.</p><span class="tag">WhisperKit · VAD · Local</span></div>
-            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">⚡</div><h3 data-i18n="f4_title">Focus IA</h3><p data-i18n="f4_desc">S'active automatiquement pendant vos sessions Claude/Cursor. Pause Spotlight, Time Machine, veille.</p><span class="tag">IOKit · Auto-detect</span></div>
-            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">❤️‍🩹</div><h3 data-i18n="f5_title">Battery Health</h3><p data-i18n="f5_desc">Santé %, cycles, température, historique de capacité. Estimez la durée de vie restante de votre batterie.</p><span class="tag">IOKit · Charts · History</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🔋</div><h3 data-i18n="f1_title">Contrôle de charge</h3><p data-i18n="f1_desc">Seuil 20–100 % via le SMC. Mode plage (Pro) : au-dessus du seuil, la batterie redescend au seuil à chaque branchement, puis y reste. Pause de la charge quand la batterie chauffe. Et le Mac reste éveillé tant que Claude travaille.</p><span class="tag">SMC · XPC · Root</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">📊</div><h3 data-i18n="f2_title">Suivi Claude</h3><p data-i18n="f2_desc">Vos limites en temps réel : session (5 h), hebdomadaire, remplissage du contexte, lues en local depuis Claude Code. Synchro de votre compte en option (Pro) et alerte de consommation anormale.</p><span class="tag">Claude Code · statusLine · Local</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">❤️‍🩹</div><h3 data-i18n="f5_title">Santé batterie</h3><p data-i18n="f5_desc">Santé %, cycles, température, historique de capacité (Pro). Estimez la durée de vie restante de votre batterie.</p><span class="tag">IOKit · Charts · History</span></div>
         </div>
     </div>
 </section>
@@ -415,7 +408,7 @@
     <div class="container">
         <div class="section-label reveal" data-i18n="compare_label">Comparatif</div>
         <h2 class="section-title reveal" data-i18n="compare_title">Pourquoi PowerGuard ?</h2>
-        <p class="section-sub reveal" data-i18n="compare_sub">macOS 26.4 a ajouté le charge limit natif. PowerGuard fait ça + 4 choses qu'Apple ne fait pas.</p>
+        <p class="section-sub reveal" data-i18n="compare_sub">macOS 26.4 a ajouté le charge limit natif. PowerGuard fait ça, plus le suivi Claude, l'historique de santé batterie et un Mac qui reste éveillé tant que Claude travaille.</p>
         <div class="compare-wrap reveal">
             <table class="compare">
                 <thead>
@@ -430,11 +423,9 @@
                 <tbody>
                     <tr><td data-i18n="cmp_limit">Charge limit 20-100%</td><td class="highlight yes">✓</td><td class="partial">80-100%</td><td class="yes">✓</td><td class="yes">✓</td></tr>
                     <tr><td data-i18n="cmp_claude">Suivi limites Claude</td><td class="highlight yes">✓</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
-                    <tr><td data-i18n="cmp_voice">Voice-to-Text Whisper local</td><td class="highlight yes">✓</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
-                    <tr><td data-i18n="cmp_focus">Focus IA auto (AI sessions)</td><td class="highlight yes">✓</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
+                    <tr><td data-i18n="cmp_awake">Garder éveillé tant que Claude travaille</td><td class="highlight yes">✓</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
                     <tr><td data-i18n="cmp_thermal">Pause thermique</td><td class="highlight yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="partial">Stats only</td></tr>
                     <tr><td data-i18n="cmp_health">Graphiques santé batterie</td><td class="highlight yes">✓</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-                    <tr><td data-i18n="cmp_widget">Widget macOS</td><td class="highlight yes">✓</td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr>
                     <tr><td data-i18n="cmp_intel">Support Intel Macs</td><td class="highlight yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">M1+ only</td></tr>
                     <tr><td data-i18n="cmp_price">Prix</td><td class="highlight"><strong data-price-pro>19.99€</strong></td><td class="yes" data-i18n="cmp_free">Gratuit</td><td class="partial">14.49€/an</td><td class="partial">10€</td></tr>
                     <tr><td data-i18n="cmp_subscription">Sans abonnement</td><td class="highlight yes">✓</td><td class="yes">✓</td><td class="no">Abonnement</td><td class="yes">✓</td></tr>
@@ -450,7 +441,7 @@
         <h2 class="section-title reveal" data-i18n="how_title">3 minutes pour protéger votre Mac</h2>
         <div class="steps">
             <div class="step reveal"><div class="step-number">01</div><h3 data-i18n="s1_title">Installez</h3><p data-i18n="s1_desc">Téléchargez le DMG, glissez dans Applications. Le helper s'installe automatiquement.</p><span class="step-arrow">→</span></div>
-            <div class="step reveal"><div class="step-number">02</div><h3 data-i18n="s2_title">Configurez</h3><p data-i18n="s2_desc">Choisissez votre seuil de charge (60% recommandé). Connectez votre compte Claude.</p><span class="step-arrow">→</span></div>
+            <div class="step reveal"><div class="step-number">02</div><h3 data-i18n="s2_title">Configurez</h3><p data-i18n="s2_desc">Choisissez votre seuil de charge (60 % recommandé). Activez le suivi Claude Code en un clic.</p><span class="step-arrow">→</span></div>
             <div class="step reveal"><div class="step-number">03</div><h3 data-i18n="s3_title">Travaillez</h3><p data-i18n="s3_desc">PowerGuard tourne en arrière-plan. Votre batterie est protégée, vos limites sont visibles.</p></div>
         </div>
     </div>
@@ -467,11 +458,11 @@
                 <div class="price-amount"><span data-price-free="0€">0€</span></div>
                 <div class="price-desc" data-i18n="free_desc">Pour toujours</div>
                 <ul class="price-features">
-                    <li data-i18n="fr1">Seuil de charge unique (20-100%)</li>
-                    <li data-i18n="fr2">Santé batterie</li>
-                    <li data-i18n="fr3">Détection sessions IA</li>
-                    <li data-i18n="fr4">Widget menu bar</li>
-                    <li data-i18n="fr5">Notifications critiques</li>
+                    <li data-i18n="fr1">Seuil de charge 20–100 %</li>
+                    <li data-i18n="fr2">Pause de la charge quand la batterie chauffe</li>
+                    <li data-i18n="fr3">Garder éveillé tant que Claude travaille</li>
+                    <li data-i18n="fr4">Santé batterie (santé, cycles, température)</li>
+                    <li data-i18n="fr5">Notifications : batterie critique, pause thermique</li>
                 </ul>
             </div>
             <div class="price-card featured reveal" data-badge="ESSAI 7 JOURS">
@@ -480,12 +471,9 @@
                 <div class="price-desc" data-i18n="pro_desc">Licence perpétuelle · Essai gratuit 7 jours</div>
                 <ul class="price-features">
                     <li data-i18n="pr1">Tout le tier gratuit</li>
-                    <li class="pro" data-i18n="pr2">Suivi limites Claude temps réel</li>
-                    <li class="pro" data-i18n="pr3">Voice-to-Text (Whisper local)</li>
-                    <li class="pro" data-i18n="pr4">Focus IA automatique</li>
-                    <li class="pro" data-i18n="pr5">Graphiques santé batterie</li>
-                    <li class="pro" data-i18n="pr6">Mode plage (hystérésis)</li>
-                    <li class="pro" data-i18n="pr7">Alertes température</li>
+                    <li class="pro" data-i18n="pr2">Suivi limites Claude temps réel + synchro de votre compte</li>
+                    <li class="pro" data-i18n="pr3">Mode plage + descente automatique au seuil</li>
+                    <li class="pro" data-i18n="pr4">Graphiques santé batterie (historique)</li>
                 </ul>
             </div>
         </div>
@@ -504,7 +492,7 @@
         <div class="faq">
             <details class="faq-item reveal">
                 <summary data-i18n="q1">macOS 26.4 a déjà le charge limit natif. Pourquoi PowerGuard ?</summary>
-                <div class="answer" data-i18n="a1">Le charge limit natif d'Apple est limité à 80-100%. PowerGuard va de 20 à 100% avec hystérésis + pause thermique. Surtout, PowerGuard ajoute 4 features qu'Apple ne fait pas : suivi Claude, voice-to-text local, Focus IA auto, et graphiques santé batterie. C'est une utility suite complète pour les devs IA, pas juste un charge limiter.</div>
+                <div class="answer" data-i18n="a1">Le charge limit natif d'Apple est limité à 80–100 %. PowerGuard va de 20 à 100 % avec mode plage et pause thermique, et ajoute ce qu'Apple ne fait pas : le suivi de vos limites Claude en temps réel, l'historique de santé batterie et un Mac qui reste éveillé tant que Claude travaille.</div>
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q2">Est-ce dangereux pour ma batterie ?</summary>
@@ -512,11 +500,11 @@
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q3">D'où viennent les données d'usage Claude ?</summary>
-                <div class="answer" data-i18n="a3">Du flux officiel « statusLine » de Claude Code (v2.1.80+), que Claude Code fournit localement à PowerGuard. Aucun scraping, aucune session claude.ai, aucun réseau. Les limites (session 5h, hebdomadaire), le modèle courant et le remplissage du contexte viennent directement de Claude Code, pour les abonnés Pro/Max.</div>
+                <div class="answer" data-i18n="a3">Du flux officiel « statusLine » de Claude Code (v2.1.80+), que Claude Code fournit localement à PowerGuard : aucun scraping, aucune session claude.ai, aucune connexion réseau pour ce suivi. Les limites (session 5 h, hebdomadaire), le modèle courant et le remplissage du contexte viennent directement de Claude Code, pour les abonnés Pro/Max. En option (Pro, désactivée par défaut), la synchro temps réel interroge Anthropic en lecture seule avec votre login Claude Code pour afficher l'usage réel de votre compte (web et app compris).</div>
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q4">Mes données vont-elles quelque part ?</summary>
-                <div class="answer" data-i18n-html="a4">Aucune donnée d'usage ne quitte votre Mac. Tout est traité en local : batterie via IOKit, voix via WhisperKit, et le suivi Claude lit le flux officiel « statusLine » de Claude Code, en local. Aucune analytics, aucune télémétrie. Les seules connexions sortantes sont la vérification des mises à jour (Sparkle) et, si vous achetez Pro, la validation de licence. Voir notre <a href="./privacy/">politique de confidentialité</a>.</div>
+                <div class="answer" data-i18n-html="a4">Aucune donnée d'usage ne quitte votre Mac. Tout est traité en local : batterie via IOKit, suivi Claude via le flux « statusLine » de Claude Code. Aucune analytics, aucune télémétrie. Connexions sortantes : la vérification des mises à jour (Sparkle), la validation de licence si vous achetez Pro, et — seulement si vous l'activez — la requête de synchro temps réel vers Anthropic avec votre login Claude Code. Voir notre <a href="./privacy/">politique de confidentialité</a>.</div>
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q5">Fonctionne sur Intel Mac ?</summary>
@@ -527,20 +515,12 @@
                 <div class="answer" data-i18n="a6">Oui, garantie 30 jours satisfait ou remboursé. Écrivez à <a href="mailto:ghanikerkoub@gmail.com">ghanikerkoub@gmail.com</a> avec votre email de licence — remboursement sous 5 jours ouvrés via LemonSqueezy, aucune question.</div>
             </details>
             <details class="faq-item reveal">
-                <summary data-i18n="q7">Le raccourci Ctrl+Option+Space est-il personnalisable ?</summary>
-                <div class="answer" data-i18n="a7">Pas encore. Le hotkey est fixé dans la v1.0 pour garantir qu'il ne conflicte pas avec les raccourcis système. La personnalisation arrive en v1.1.</div>
-            </details>
-            <details class="faq-item reveal">
                 <summary data-i18n="q8">Combien de Macs par licence ?</summary>
                 <div class="answer" data-i18n="a8">Jusqu'à 3 Macs personnels que vous possédez (votre portable + fixe + vieux Mac de dépannage). La licence est perpétuelle et inclut 1 an de mises à jour.</div>
             </details>
             <details class="faq-item reveal">
                 <summary data-i18n="q9">Pourquoi PowerGuard demande un service privilégié ?</summary>
                 <div class="answer" data-i18n="a9">Le contrôle SMC nécessite un accès root (c'est macOS qui l'impose). PowerGuard utilise un helper XPC signé Apple (SMAppService) qui tourne en arrière-plan avec un accès minimal — uniquement aux registres SMC de charge. Aucun accès réseau, aucun accès à vos fichiers.</div>
-            </details>
-            <details class="faq-item reveal">
-                <summary data-i18n="q10">Combien pèse le modèle Whisper ?</summary>
-                <div class="answer" data-i18n="a10">Le modèle large-v3 pèse ~1.5 GB (téléchargé une seule fois depuis Hugging Face au premier usage voice). Si vous voulez économiser de l'espace, vous pouvez utiliser le modèle base (~75 MB) — moins précis mais 10× plus rapide.</div>
             </details>
         </div>
     </div>
@@ -587,33 +567,31 @@
 const TRANSLATIONS = {
     fr: {
         title: "PowerGuard — Limiteur de charge Mac & suivi d'usage Claude",
-        description: "App menu bar macOS : limitez la charge de votre MacBook (20–100 %), suivez vos limites Claude en temps réel, dictée vocale locale. Alternative à AlDente, notarisée Apple.",
+        description: "App menu bar macOS : limitez la charge de votre MacBook (20–100 %), suivez vos limites Claude en temps réel, surveillez la santé de votre batterie. Alternative à AlDente, notarisée Apple.",
         nav_features: "Features", nav_how: "Comment ça marche", nav_pricing: "Tarifs", nav_cta: "Télécharger",
         hero_badge: "Beta ouverte — macOS 14+",
         hero_title: "L'outil Mac pour<br><span class=\"gradient\">les devs Claude.</span>",
-        hero_sub: "Suivi limites Claude, dictée vocale locale, contrôle batterie, Focus IA auto. Cinq utilitaires en un, dans votre menu bar.",
+        hero_sub: "Limitez la charge de votre MacBook, suivez vos limites Claude en temps réel, surveillez la santé de votre batterie. Trois outils, une icône dans la barre des menus.",
         hero_cta_primary: "Télécharger la beta", hero_cta_secondary: "Voir les features ↓",
         ring_label: "SEUIL ACTIF",
         stat_health: "Health", stat_temp: "Temp", stat_cycles: "Cycles",
         features_label: "Fonctionnalités",
-        features_title: "5 piliers. Un seul menu bar.",
+        features_title: "Trois piliers. Une seule barre des menus.",
         features_sub: "Chaque feature est conçue pour les développeurs qui poussent leur MacBook avec des outils IA.",
-        f1_title: "Battery Control", f1_desc: "Seuil de charge 20-100% via SMC. Hystérésis configurable. Pause thermique automatique quand la température monte.",
-        f2_title: "Claude Usage",   f2_desc: "Vos limites en temps réel : session (5h), hebdomadaire, remplissage du contexte. Lu depuis le flux officiel de Claude Code, en local.",
-        f3_title: "Voice-to-Text",  f3_desc: "Whisper large-v3 local. Dictez avec Ctrl+Option+Space, le texte est collé automatiquement. Zéro cloud.",
-        f4_title: "Focus IA",       f4_desc: "S'active automatiquement pendant vos sessions Claude/Cursor. Pause Spotlight, Time Machine, veille.",
-        f5_title: "Battery Health", f5_desc: "Santé %, cycles, température, historique de capacité. Estimez la durée de vie restante de votre batterie.",
+        f1_title: "Contrôle de charge", f1_desc: "Seuil 20–100 % via le SMC. Mode plage (Pro) : au-dessus du seuil, la batterie redescend au seuil à chaque branchement, puis y reste. Pause de la charge quand la batterie chauffe. Et le Mac reste éveillé tant que Claude travaille.",
+        f2_title: "Suivi Claude",   f2_desc: "Vos limites en temps réel : session (5 h), hebdomadaire, remplissage du contexte, lues en local depuis Claude Code. Synchro de votre compte en option (Pro) et alerte de consommation anormale.",
+        f5_title: "Santé batterie", f5_desc: "Santé %, cycles, température, historique de capacité (Pro). Estimez la durée de vie restante de votre batterie.",
         how_label: "Comment ça marche", how_title: "3 minutes pour protéger votre Mac",
         s1_title: "Installez",   s1_desc: "Téléchargez le DMG, glissez dans Applications. Le helper s'installe automatiquement.",
-        s2_title: "Configurez",  s2_desc: "Choisissez votre seuil de charge (60% recommandé). Connectez votre compte Claude.",
+        s2_title: "Configurez",  s2_desc: "Choisissez votre seuil de charge (60 % recommandé). Activez le suivi Claude Code en un clic.",
         s3_title: "Travaillez",  s3_desc: "PowerGuard tourne en arrière-plan. Votre batterie est protégée, vos limites sont visibles.",
         pricing_label: "Tarifs",
         pricing_title: "Gratuit pour commencer.<br>Pro pour tout débloquer.",
         pricing_sub: "Achat unique. Pas d'abonnement. 1 an de mises à jour inclus.",
         tier_free: "Gratuit", free_desc: "Pour toujours",
-        fr1: "Seuil de charge unique (20-100%)", fr2: "Santé batterie", fr3: "Détection sessions IA", fr4: "Widget menu bar", fr5: "Notifications critiques",
+        fr1: "Seuil de charge 20–100 %", fr2: "Pause de la charge quand la batterie chauffe", fr3: "Garder éveillé tant que Claude travaille", fr4: "Santé batterie (santé, cycles, température)", fr5: "Notifications : batterie critique, pause thermique",
         tier_pro: "Pro", once: "une fois", pro_desc: "Licence perpétuelle · Essai gratuit 7 jours", badge_popular: "ESSAI 7 JOURS", skip_link: "Aller au contenu",
-        pr1: "Tout le tier gratuit", pr2: "Suivi limites Claude temps réel", pr3: "Voice-to-Text (Whisper local)", pr4: "Focus IA automatique", pr5: "Graphiques santé batterie", pr6: "Mode plage (hystérésis)", pr7: "Alertes température",
+        pr1: "Tout le tier gratuit", pr2: "Suivi limites Claude temps réel + synchro de votre compte", pr3: "Mode plage + descente automatique au seuil", pr4: "Graphiques santé batterie (historique)", 
         download_label: "Télécharger", download_title: "Rejoignez la beta.",
         download_sub: "Téléchargez le DMG, glissez PowerGuard dans Applications. Les mises à jour arrivent ensuite automatiquement.",
         download_btn: "Télécharger PowerGuard (.dmg)",
@@ -628,15 +606,14 @@ const TRANSLATIONS = {
         shots_label: "Aperçu", shots_title: "Tout dans votre menu bar",
         shots_sub: "Conçu pour ne jamais quitter la menu bar. Discret, rapide, natif.",
         shot1_label: "Popover principal", shot2_label: "Menu bar",
-        shot3_label: "Claude usage", shot4_label: "Préférences", shot5_label: "Battery Health",
+        shot3_label: "Claude usage", 
 
         // Comparison
         compare_label: "Comparatif", compare_title: "Pourquoi PowerGuard ?",
-        compare_sub: "macOS 26.4 a ajouté le charge limit natif. PowerGuard fait ça + 4 choses qu'Apple ne fait pas.",
+        compare_sub: "macOS 26.4 a ajouté le charge limit natif. PowerGuard fait ça, plus le suivi Claude, l'historique de santé batterie et un Mac qui reste éveillé tant que Claude travaille.",
         cmp_limit: "Charge limit 20-100%", cmp_claude: "Suivi limites Claude",
-        cmp_voice: "Voice-to-Text Whisper local", cmp_focus: "Focus IA auto (AI sessions)",
         cmp_thermal: "Pause thermique", cmp_health: "Graphiques santé batterie",
-        cmp_widget: "Widget macOS", cmp_intel: "Support Intel Macs",
+        cmp_intel: "Support Intel Macs",
         cmp_price: "Prix", cmp_free: "Gratuit", cmp_subscription: "Sans abonnement",
 
         // Testimonials removed pre-launch (no real users yet).
@@ -644,55 +621,50 @@ const TRANSLATIONS = {
         // FAQ
         faq_label: "FAQ", faq_title: "Questions fréquentes",
         q1: "macOS 26.4 a déjà le charge limit natif. Pourquoi PowerGuard ?",
-        a1: "Le charge limit natif d'Apple est limité à 80-100%. PowerGuard va de 20 à 100% avec hystérésis + pause thermique. Surtout, PowerGuard ajoute 4 features qu'Apple ne fait pas : suivi Claude, voice-to-text local, Focus IA auto, et graphiques santé batterie. C'est une utility suite complète pour les devs IA, pas juste un charge limiter.",
+        a1: "Le charge limit natif d'Apple est limité à 80–100 %. PowerGuard va de 20 à 100 % avec mode plage et pause thermique, et ajoute ce qu'Apple ne fait pas : le suivi de vos limites Claude en temps réel, l'historique de santé batterie et un Mac qui reste éveillé tant que Claude travaille.",
         q2: "Est-ce dangereux pour ma batterie ?",
         a2: "Non. PowerGuard pilote le SMC (System Management Controller), le contrôleur qu'utilise macOS lui-même pour gérer la charge. Un mécanisme fail-safe réactive la charge en cas d'erreur. Limiter la charge autour de 60-80% réduit l'usure d'une batterie maintenue en permanence à 100% — un principe reconnu de longévité des batteries lithium-ion. Comme toute intervention logicielle, le résultat ne peut être garanti à 100% (voir nos Conditions).",
         q3: "D'où viennent les données d'usage Claude ?",
-        a3: "Du flux officiel « statusLine » de Claude Code (v2.1.80+), fourni localement à PowerGuard. Aucun scraping, aucune session claude.ai, aucun réseau. Les limites (session 5h, hebdomadaire), le modèle courant et le remplissage du contexte viennent directement de Claude Code, pour les abonnés Pro/Max.",
+        a3: "Du flux officiel « statusLine » de Claude Code (v2.1.80+), que Claude Code fournit localement à PowerGuard : aucun scraping, aucune session claude.ai, aucune connexion réseau pour ce suivi. Les limites (session 5 h, hebdomadaire), le modèle courant et le remplissage du contexte viennent directement de Claude Code, pour les abonnés Pro/Max. En option (Pro, désactivée par défaut), la synchro temps réel interroge Anthropic en lecture seule avec votre login Claude Code pour afficher l'usage réel de votre compte (web et app compris).",
         q4: "Mes données vont-elles quelque part ?",
-        a4: "Aucune donnée d'usage ne quitte votre Mac. Tout est traité en local : batterie via IOKit, voix via WhisperKit, et le suivi Claude lit le flux officiel « statusLine » de Claude Code, en local. Aucune analytics, aucune télémétrie. Les seules connexions sortantes sont la vérification des mises à jour (Sparkle) et, si vous achetez Pro, la validation de licence. Voir notre <a href=\"./privacy/\">politique de confidentialité</a>.",
+        a4: "Aucune donnée d'usage ne quitte votre Mac. Tout est traité en local : batterie via IOKit, suivi Claude via le flux « statusLine » de Claude Code. Aucune analytics, aucune télémétrie. Connexions sortantes : la vérification des mises à jour (Sparkle), la validation de licence si vous achetez Pro, et — seulement si vous l'activez — la requête de synchro temps réel vers Anthropic avec votre login Claude Code. Voir notre <a href=\"./privacy/\">politique de confidentialité</a>.",
         q5: "Fonctionne sur Intel Mac ?",
         a5: "Oui. PowerGuard est un binaire universal (arm64 + x86_64). Fonctionne sur MacBook Intel depuis 2015 et tous les Apple Silicon (M1/M2/M3/M4). Requiert macOS 14 (Sonoma) ou plus.",
         q6: "Puis-je être remboursé ?",
         a6: "Oui, garantie 30 jours satisfait ou remboursé. Écrivez à ghanikerkoub@gmail.com avec votre email de licence — remboursement sous 5 jours ouvrés via LemonSqueezy, aucune question.",
-        q7: "Le raccourci Ctrl+Option+Space est-il personnalisable ?",
-        a7: "Pas encore. Le hotkey est fixé dans la v1.0 pour garantir qu'il ne conflicte pas avec les raccourcis système. La personnalisation arrive en v1.1.",
         q8: "Combien de Macs par licence ?",
         a8: "Jusqu'à 3 Macs personnels que vous possédez (votre portable + fixe + vieux Mac de dépannage). La licence est perpétuelle et inclut 1 an de mises à jour.",
         q9: "Pourquoi PowerGuard demande un service privilégié ?",
         a9: "Le contrôle SMC nécessite un accès root (c'est macOS qui l'impose). PowerGuard utilise un helper XPC signé Apple (SMAppService) qui tourne en arrière-plan avec un accès minimal — uniquement aux registres SMC de charge. Aucun accès réseau, aucun accès à vos fichiers.",
-        q10: "Combien pèse le modèle Whisper ?",
-        a10: "Le modèle large-v3 pèse ~1.5 GB (téléchargé une seule fois depuis Hugging Face au premier usage voice). Si vous voulez économiser de l'espace, vous pouvez utiliser le modèle base (~75 MB) — moins précis mais 10× plus rapide.",
+        cmp_awake: "Garder éveillé tant que Claude travaille",
     },
     en: {
         title: "PowerGuard — Mac charge limiter & Claude usage tracker",
-        description: "macOS menu bar app: limit your MacBook's charge (20–100%), track your Claude usage in real time, local voice-to-text. A notarized AlDente alternative with a free tier.",
+        description: "macOS menu bar app: limit your MacBook's charge (20–100%), track your Claude limits in real time, watch your battery health. A notarized AlDente alternative with a free tier.",
         nav_features: "Features", nav_how: "How it works", nav_pricing: "Pricing", nav_cta: "Download",
         hero_badge: "Beta open — macOS 14+",
         hero_title: "The Mac utility for<br><span class=\"gradient\">Claude developers.</span>",
-        hero_sub: "Claude usage tracking, local voice dictation, battery control, auto Focus mode. Five utilities in one, in your menu bar.",
+        hero_sub: "Limit your MacBook's charge, track your Claude limits in real time, watch your battery health. Three tools, one menu bar icon.",
         hero_cta_primary: "Download the beta", hero_cta_secondary: "See features ↓",
         ring_label: "ACTIVE LIMIT",
         stat_health: "Health", stat_temp: "Temp", stat_cycles: "Cycles",
         features_label: "Features",
-        features_title: "5 pillars. One menu bar.",
+        features_title: "Three pillars. One menu bar.",
         features_sub: "Each feature is designed for developers pushing their MacBook with AI tools.",
-        f1_title: "Battery Control", f1_desc: "Charge limit 20-100% via SMC. Configurable hysteresis. Automatic thermal pause when temperature rises.",
-        f2_title: "Claude Usage",   f2_desc: "Your limits in real time: session (5h), weekly, context fill. Read from Claude Code's official statusLine feed, locally.",
-        f3_title: "Voice-to-Text",  f3_desc: "Whisper large-v3 local. Dictate with Ctrl+Option+Space, text pasted automatically. Zero cloud.",
-        f4_title: "Focus AI",       f4_desc: "Auto-activates during Claude/Cursor sessions. Pauses Spotlight, Time Machine, sleep.",
-        f5_title: "Battery Health", f5_desc: "Health %, cycles, temperature, capacity history. Estimate your battery's remaining life.",
+        f1_title: "Charge control", f1_desc: "20–100% threshold via the SMC. Range mode (Pro): above the threshold, the battery drains back to it on every plug-in, then holds. Charging pauses when the battery runs hot. And the Mac stays awake while Claude works.",
+        f2_title: "Claude usage",   f2_desc: "Your limits in real time: session (5h), weekly, context fill, read locally from Claude Code. Optional account sync (Pro) and an abnormal-usage alert.",
+        f5_title: "Battery health", f5_desc: "Health %, cycles, temperature, capacity history (Pro). Estimate your battery's remaining life.",
         how_label: "How it works", how_title: "3 minutes to protect your Mac",
         s1_title: "Install",    s1_desc: "Download the DMG, drag into Applications. The helper installs automatically.",
-        s2_title: "Configure",  s2_desc: "Choose your charge limit (60% recommended). Connect your Claude account.",
+        s2_title: "Configure",  s2_desc: "Choose your charge limit (60% recommended). Turn on Claude Code tracking in one click.",
         s3_title: "Work",       s3_desc: "PowerGuard runs in the background. Your battery is protected, your limits are visible.",
         pricing_label: "Pricing",
         pricing_title: "Free to start.<br>Pro to unlock everything.",
         pricing_sub: "One-time purchase. No subscription. 1 year of updates included.",
         tier_free: "Free", free_desc: "Forever",
-        fr1: "Single charge limit (20-100%)", fr2: "Battery health", fr3: "AI session detection", fr4: "Menu bar widget", fr5: "Critical notifications",
+        fr1: "20–100% charge limit", fr2: "Charging pauses when the battery runs hot", fr3: "Keep awake while Claude works", fr4: "Battery health (health, cycles, temperature)", fr5: "Notifications: critical battery, thermal pause",
         tier_pro: "Pro", once: "one time", pro_desc: "Perpetual license · 7-day free trial", badge_popular: "7-DAY TRIAL", skip_link: "Skip to content",
-        pr1: "Everything in Free", pr2: "Real-time Claude limits", pr3: "Voice-to-Text (local Whisper)", pr4: "Auto Focus AI", pr5: "Battery health charts", pr6: "Range mode (hysteresis)", pr7: "Temperature alerts",
+        pr1: "Everything in Free", pr2: "Real-time Claude limits + account sync", pr3: "Range mode + automatic descent to the threshold", pr4: "Battery health charts (history)", 
         download_label: "Download", download_title: "Join the beta.",
         download_sub: "Download the DMG, drag PowerGuard into Applications. Updates then arrive automatically.",
         download_btn: "Download PowerGuard (.dmg)",
@@ -707,15 +679,14 @@ const TRANSLATIONS = {
         shots_label: "Preview", shots_title: "All in your menu bar",
         shots_sub: "Built to never leave the menu bar. Discreet, fast, native.",
         shot1_label: "Main popover", shot2_label: "Menu bar",
-        shot3_label: "Claude usage", shot4_label: "Preferences", shot5_label: "Battery Health",
+        shot3_label: "Claude usage", 
 
         // Comparison
         compare_label: "Comparison", compare_title: "Why PowerGuard?",
-        compare_sub: "macOS 26.4 added native charge limit. PowerGuard does that + 4 things Apple doesn't.",
+        compare_sub: "macOS 26.4 added a native charge limit. PowerGuard does that, plus Claude usage tracking, battery health history and a Mac that stays awake while Claude works.",
         cmp_limit: "Charge limit 20-100%", cmp_claude: "Claude usage tracking",
-        cmp_voice: "Voice-to-Text local Whisper", cmp_focus: "Auto Focus AI (AI sessions)",
         cmp_thermal: "Thermal pause", cmp_health: "Battery health charts",
-        cmp_widget: "macOS Widget", cmp_intel: "Intel Mac support",
+        cmp_intel: "Intel Mac support",
         cmp_price: "Price", cmp_free: "Free", cmp_subscription: "No subscription",
 
         // Testimonials removed pre-launch (no real users yet).
@@ -723,25 +694,22 @@ const TRANSLATIONS = {
         // FAQ
         faq_label: "FAQ", faq_title: "Frequently asked",
         q1: "macOS 26.4 has native charge limit. Why PowerGuard?",
-        a1: "Apple's native charge limit is 80-100% only. PowerGuard goes 20-100% with hysteresis + thermal pause. More importantly, PowerGuard adds 4 features Apple doesn't: Claude tracking, local voice-to-text, auto Focus AI, and battery health charts. It's a complete utility suite for AI devs, not just a charge limiter.",
+        a1: "Apple's native charge limit only goes from 80 to 100%. PowerGuard goes from 20 to 100% with range mode and a thermal pause, and adds what Apple doesn't: real-time Claude limits, battery health history and a Mac that stays awake while Claude works.",
         q2: "Is it dangerous for my battery?",
         a2: "No. PowerGuard drives the SMC (System Management Controller), the same controller macOS itself uses to manage charging. A fail-safe mechanism re-enables charging on error. Keeping the charge around 60-80% reduces the wear of a battery held at 100% all the time — a well-established principle of lithium-ion longevity. As with any software intervention, the outcome cannot be guaranteed 100% (see our Terms).",
         q3: "Where does the Claude usage data come from?",
-        a3: "From Claude Code's official statusLine feed (v2.1.80+), provided to PowerGuard locally. No scraping, no claude.ai session, no network. Limits (5h session, weekly), current model and context fill come straight from Claude Code, for Pro/Max subscribers.",
+        a3: "From Claude Code's official statusLine feed (v2.1.80+), which Claude Code provides to PowerGuard locally: no scraping, no claude.ai session, no network connection for this tracking. Limits (5h session, weekly), current model and context fill come straight from Claude Code, for Pro/Max subscribers. Optionally (Pro, off by default), real-time sync makes a read-only request to Anthropic with your Claude Code login to show your account's real usage (web and app included).",
         q4: "Where does my data go?",
-        a4: "No usage data leaves your Mac. Everything is processed locally: battery via IOKit, voice via WhisperKit, and Claude tracking reads Claude Code's official statusLine feed, locally. No analytics, no telemetry. The only outbound connections are update checks (Sparkle) and, if you buy Pro, license validation. See our <a href=\"./privacy/\">privacy policy</a>.",
+        a4: "No usage data leaves your Mac. Everything is processed locally: battery via IOKit, Claude tracking via Claude Code's statusLine feed. No analytics, no telemetry. Outbound connections: update checks (Sparkle), license validation if you buy Pro, and — only if you turn it on — the real-time sync request to Anthropic with your Claude Code login. See our <a href=\"./privacy/\">privacy policy</a>.",
         q5: "Does it work on Intel Macs?",
         a5: "Yes. PowerGuard is a universal binary (arm64 + x86_64). Works on Intel MacBooks since 2015 and all Apple Silicon (M1/M2/M3/M4). Requires macOS 14 (Sonoma) or later.",
         q6: "Can I get a refund?",
         a6: "Yes, 30-day money-back guarantee. Email ghanikerkoub@gmail.com with your license email — refund within 5 business days via LemonSqueezy, no questions asked.",
-        q7: "Is Ctrl+Option+Space customizable?",
-        a7: "Not yet. The hotkey is fixed in v1.0 to ensure it doesn't conflict with system shortcuts. Customization is coming in v1.1.",
         q8: "How many Macs per license?",
         a8: "Up to 3 personal Macs you own (laptop + desktop + spare Mac). The license is perpetual and includes 1 year of updates.",
         q9: "Why does PowerGuard ask for a privileged service?",
         a9: "SMC control requires root access (macOS enforces this). PowerGuard uses an Apple-signed XPC helper (SMAppService) running in the background with minimal access — only SMC charge registers. No network access, no file access.",
-        q10: "How big is the Whisper model?",
-        a10: "The large-v3 model is ~1.5 GB (downloaded once from Hugging Face on first voice use). To save space, you can use the base model (~75 MB) — less accurate but 10× faster.",
+        cmp_awake: "Keep awake while Claude works",
     }
 };
 
