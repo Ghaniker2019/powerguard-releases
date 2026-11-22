@@ -39,7 +39,7 @@
         "applicationCategory": "DeveloperApplication",
         "applicationSubCategory": "Utility",
         "operatingSystem": "macOS",
-        "softwareVersion": "0.2.1",
+        "softwareVersion": "0.2.2",
         "softwareRequirements": "macOS 14 (Sonoma) ou plus ; Apple Silicon ou Intel",
         "datePublished": "2026-08-03",
         "url": "https://ghaniker2019.github.io/powerguard-releases/",
@@ -48,7 +48,7 @@
         "author": { "@type": "Organization", "name": "PowerGuard" },
         "featureList": [
             "Limite de charge 20–100 % via SMC, charge à 100 % une fois, mode plage avec descente automatique (Pro)",
-            "Suivi des limites d'usage Claude (session, hebdo, contexte) lu en local depuis Claude Code",
+            "Suivi des limites d'usage Claude (session, hebdo, contexte) lu en local depuis Claude Code, avec le temps restant avant la limite",
             "Le Mac reste éveillé tant que Claude travaille",
             "Graphiques de santé batterie (Pro)"
         ],
@@ -372,7 +372,7 @@
         <p class="section-sub reveal" data-i18n="features_sub">Chaque feature est conçue pour les développeurs qui poussent leur MacBook avec des outils IA.</p>
         <div class="features-grid">
             <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🔋</div><h3 data-i18n="f1_title">Contrôle de charge</h3><p data-i18n="f1_desc">Seuil 20–100 % via le SMC. Mode plage (Pro) : au-dessus du seuil, la batterie redescend au seuil à chaque branchement, puis y reste. Pause de la charge quand la batterie chauffe. Besoin de 100 % avant de partir : la tuile Charge lève le seuil une fois. Et le Mac reste éveillé tant que Claude travaille.</p><span class="tag">SMC · XPC · Root</span></div>
-            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">📊</div><h3 data-i18n="f2_title">Suivi Claude</h3><p data-i18n="f2_desc">Vos limites en temps réel : session (5 h), hebdomadaire, remplissage du contexte, lues en local depuis Claude Code. Et une alerte de consommation anormale.</p><span class="tag">Claude Code · statusLine · Local</span></div>
+            <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">📊</div><h3 data-i18n="f2_title">Suivi Claude</h3><p data-i18n="f2_desc">Vos limites en temps réel : session (5 h), hebdomadaire, remplissage du contexte, lues en local depuis Claude Code. Une alerte de consommation anormale, et le temps restant avant la limite au rythme actuel.</p><span class="tag">Claude Code · statusLine · Local</span></div>
             <div class="feature-card reveal"><div class="feature-icon" aria-hidden="true">❤️‍🩹</div><h3 data-i18n="f5_title">Santé batterie</h3><p data-i18n="f5_desc">Santé %, cycles, température, historique de capacité (Pro). Estimez la durée de vie restante de votre batterie.</p><span class="tag">IOKit · Charts · History</span></div>
         </div>
     </div>
@@ -472,7 +472,7 @@
                 <div class="price-desc" data-i18n="pro_desc">Licence perpétuelle · Essai gratuit 7 jours</div>
                 <ul class="price-features">
                     <li data-i18n="pr1">Tout le tier gratuit</li>
-                    <li class="pro" data-i18n="pr2">Suivi des limites Claude en temps réel + alerte de consommation anormale</li>
+                    <li class="pro" data-i18n="pr2">Suivi des limites Claude en temps réel, temps restant + alerte de consommation anormale</li>
                     <li class="pro" data-i18n="pr3">Mode plage + descente automatique au seuil</li>
                     <li class="pro" data-i18n="pr4">Graphiques santé batterie (historique)</li>
                 </ul>
@@ -580,7 +580,7 @@ const TRANSLATIONS = {
         features_title: "Trois piliers. Une seule barre des menus.",
         features_sub: "Chaque feature est conçue pour les développeurs qui poussent leur MacBook avec des outils IA.",
         f1_title: "Contrôle de charge", f1_desc: "Seuil 20–100 % via le SMC. Mode plage (Pro) : au-dessus du seuil, la batterie redescend au seuil à chaque branchement, puis y reste. Pause de la charge quand la batterie chauffe. Besoin de 100 % avant de partir : la tuile Charge lève le seuil une fois. Et le Mac reste éveillé tant que Claude travaille.",
-        f2_title: "Suivi Claude",   f2_desc: "Vos limites en temps réel : session (5 h), hebdomadaire, remplissage du contexte, lues en local depuis Claude Code. Et une alerte de consommation anormale.",
+        f2_title: "Suivi Claude",   f2_desc: "Vos limites en temps réel : session (5 h), hebdomadaire, remplissage du contexte, lues en local depuis Claude Code. Une alerte de consommation anormale, et le temps restant avant la limite au rythme actuel.",
         f5_title: "Santé batterie", f5_desc: "Santé %, cycles, température, historique de capacité (Pro). Estimez la durée de vie restante de votre batterie.",
         how_label: "Comment ça marche", how_title: "3 minutes pour protéger votre Mac",
         s1_title: "Installez",   s1_desc: "Téléchargez le DMG, glissez dans Applications. Le helper s'installe automatiquement.",
@@ -592,7 +592,7 @@ const TRANSLATIONS = {
         tier_free: "Gratuit", free_desc: "Pour toujours",
         fr1: "Seuil de charge 20–100 %", fr2: "Pause de la charge quand la batterie chauffe", fr3: "Garder éveillé tant que Claude travaille", fr4: "Santé batterie (santé, cycles, température)", fr5: "Notifications : batterie critique, pause thermique",
         tier_pro: "Pro", once: "une fois", pro_desc: "Licence perpétuelle · Essai gratuit 7 jours", badge_popular: "ESSAI 7 JOURS", skip_link: "Aller au contenu",
-        pr1: "Tout le tier gratuit", pr2: "Suivi des limites Claude en temps réel + alerte de consommation anormale", pr3: "Mode plage + descente automatique au seuil", pr4: "Graphiques santé batterie (historique)", 
+        pr1: "Tout le tier gratuit", pr2: "Suivi des limites Claude en temps réel, temps restant + alerte de consommation anormale", pr3: "Mode plage + descente automatique au seuil", pr4: "Graphiques santé batterie (historique)", 
         download_label: "Télécharger", download_title: "Rejoignez la beta.",
         download_sub: "Téléchargez le DMG, glissez PowerGuard dans Applications. Les mises à jour arrivent ensuite automatiquement.",
         download_btn: "Télécharger PowerGuard (.dmg)",
@@ -654,7 +654,7 @@ const TRANSLATIONS = {
         features_title: "Three pillars. One menu bar.",
         features_sub: "Each feature is designed for developers pushing their MacBook with AI tools.",
         f1_title: "Charge control", f1_desc: "20–100% threshold via the SMC. Range mode (Pro): above the threshold, the battery drains back to it on every plug-in, then holds. Charging pauses when the battery runs hot. Need 100% before a trip: the Charge tile lifts the threshold once. And the Mac stays awake while Claude works.",
-        f2_title: "Claude usage",   f2_desc: "Your limits in real time: session (5h), weekly, context fill, read locally from Claude Code, with an abnormal-usage alert.",
+        f2_title: "Claude usage",   f2_desc: "Your limits in real time: session (5h), weekly, context fill, read locally from Claude Code, with an abnormal-usage alert. Plus the time left before the limit at the current pace.",
         f5_title: "Battery health", f5_desc: "Health %, cycles, temperature, capacity history (Pro). Estimate your battery's remaining life.",
         how_label: "How it works", how_title: "3 minutes to protect your Mac",
         s1_title: "Install",    s1_desc: "Download the DMG, drag into Applications. The helper installs automatically.",
@@ -666,7 +666,7 @@ const TRANSLATIONS = {
         tier_free: "Free", free_desc: "Forever",
         fr1: "20–100% charge limit", fr2: "Charging pauses when the battery runs hot", fr3: "Keep awake while Claude works", fr4: "Battery health (health, cycles, temperature)", fr5: "Notifications: critical battery, thermal pause",
         tier_pro: "Pro", once: "one time", pro_desc: "Perpetual license · 7-day free trial", badge_popular: "7-DAY TRIAL", skip_link: "Skip to content",
-        pr1: "Everything in Free", pr2: "Real-time Claude limits + abnormal-usage alert", pr3: "Range mode + automatic descent to the threshold", pr4: "Battery health charts (history)", 
+        pr1: "Everything in Free", pr2: "Real-time Claude limits, time left + abnormal-usage alert", pr3: "Range mode + automatic descent to the threshold", pr4: "Battery health charts (history)", 
         download_label: "Download", download_title: "Join the beta.",
         download_sub: "Download the DMG, drag PowerGuard into Applications. Updates then arrive automatically.",
         download_btn: "Download PowerGuard (.dmg)",
