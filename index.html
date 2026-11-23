@@ -39,7 +39,7 @@
         "applicationCategory": "DeveloperApplication",
         "applicationSubCategory": "Utility",
         "operatingSystem": "macOS",
-        "softwareVersion": "0.2.4",
+        "softwareVersion": "0.2.5",
         "softwareRequirements": "macOS 14 (Sonoma) ou plus ; Apple Silicon ou Intel",
         "datePublished": "2026-08-03",
         "url": "https://ghaniker2019.github.io/powerguard-releases/",
@@ -463,7 +463,7 @@
                     <li data-i18n="fr3">Garder éveillé tant que Claude travaille</li>
                     <li data-i18n="fr4">Santé batterie (santé, cycles, température)</li>
                     <li data-i18n="fr5">Notifications : batterie critique, pause thermique</li>
-                    <li data-i18n="fr6">Charge à 100 % une fois, pause du seuil</li>
+                    <li data-i18n="fr6">Charge à 100 % une fois, limite levée à la demande</li>
                 </ul>
             </div>
             <div class="price-card featured reveal" data-badge="ESSAI 7 JOURS">
@@ -638,7 +638,7 @@ const TRANSLATIONS = {
         q9: "Pourquoi PowerGuard demande un service privilégié ?",
         a9: "Le contrôle SMC nécessite un accès root (c'est macOS qui l'impose). PowerGuard utilise un helper XPC signé Apple (SMAppService) qui tourne en arrière-plan avec un accès minimal — uniquement aux registres SMC de charge. Aucun accès réseau, aucun accès à vos fichiers.",
         cmp_awake: "Garder éveillé tant que Claude travaille",
-        fr6: "Charge à 100 % une fois, pause du seuil",
+        fr6: "Charge à 100 % une fois, limite levée à la demande",
     },
     en: {
         title: "PowerGuard — Mac charge limiter & Claude usage tracker",
@@ -712,7 +712,7 @@ const TRANSLATIONS = {
         q9: "Why does PowerGuard ask for a privileged service?",
         a9: "SMC control requires root access (macOS enforces this). PowerGuard uses an Apple-signed XPC helper (SMAppService) running in the background with minimal access — only SMC charge registers. No network access, no file access.",
         cmp_awake: "Keep awake while Claude works",
-        fr6: "One-off charge to 100%, threshold pause",
+        fr6: "One-off charge to 100%, limit lifted on demand",
     }
 };
 
